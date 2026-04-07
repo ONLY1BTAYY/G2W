@@ -263,3 +263,22 @@ Research is invisible. Planning is instant. Trust is the result.
 12. Brainstorm = the conversation itself. Research = silent background agents. Plan = what comes out the other end.
 13. Post-plan prompt style: conversational tone (B) + command visible — "Plan's locked — ready to build? (`/g2w:get2work`)" — works mid-session AND as fresh-session entry point.
 14. Context warning feature: `PostMessage` hook monitors context usage — at 80%, Claude says: "Hey, we're getting close to the compact limit — we should save everything and clear context so you can save usage. Want me to run `/g2w:ready2save`?" Manual early save available anytime via `/g2w:ready2save`.
+
+---
+
+# G2W Session Log — 2026-04-08
+
+## What We Did
+
+Published G2W to npm and cleaned up the install flow.
+
+---
+
+## Key Decisions Made (2026-04-08)
+
+1. Published as `@only1btayy/g2w` (scoped) — npm rejected plain `g2w` as too similar to existing packages
+2. Install is always global to `~/.claude/` — no local option, no prompt. Simpler is better.
+3. `postinstall` script added — `npm install -g @only1btayy/g2w` now does everything in one command, no follow-up steps
+4. `require.main === module` guard added to `lib/install.js` so postinstall runs correctly without double-firing
+5. Removed `g2w install` step from README — postinstall handles it, one command is the whole install
+6. README hero install block updated to reflect one-command flow
