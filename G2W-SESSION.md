@@ -282,3 +282,24 @@ Published G2W to npm and cleaned up the install flow.
 4. `require.main === module` guard added to `lib/install.js` so postinstall runs correctly without double-firing
 5. Removed `g2w install` step from README — postinstall handles it, one command is the whole install
 6. README hero install block updated to reflect one-command flow
+
+---
+
+# G2W Session Log — 2026-04-08 (continued)
+
+## What We Did
+
+Full install experience polish — logo, uninstall, spec coverage audit.
+
+---
+
+## Key Decisions Made (2026-04-08 continued)
+
+1. Dynamic npm badge — swapped static `v1.0.2` badge for live shields.io endpoint, auto-updates on every publish
+2. ASCII logo saved to `G2W-ASSETS.md` permanently — shell version + JS version both saved so it survives context clears
+3. Correct Gemini logo implemented — the `________` block letter style, not the old garbled version
+4. npm `foreground-scripts=false` is default — ALL lifecycle output suppressed, no reliable workaround exists. Final solution: `npm install -g @only1btayy/g2w && g2w` chains the logo display right after install. Clean, universal, no config needed.
+5. Uninstall added — `preuninstall` npm lifecycle hook calls `uninstall()` automatically when user runs `npm uninstall -g @only1btayy/g2w`. Removes skills + hooks from `~/.claude/` cleanly.
+6. README updated with uninstall section and `&& g2w` install command
+7. Spec coverage audit — all 7 problems from G2W-SPEC.md confirmed covered in skills. One gap found: definition of done was too vague. Tightened in `build2gether` — must be tied to user's actual environment (specific build, specific steps, specific expected result). "It compiled" is not a definition of done.
+8. `pics/` folder cleaned from repo — logo lives in `assets/logo.png`

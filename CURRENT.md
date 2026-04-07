@@ -1,27 +1,26 @@
 ## Last Completed
-G2W npm install mechanism built (2026-04-07) — CLI + install/update/uninstall logic complete.
+G2W v1.0.12 published — install flow fully working with green ASCII logo (2026-04-08)
 
 **What was done:**
-- All 9 skill files written to `skills/` (source of truth for npm package)
-- `package.json` created — name `g2w`, bin `./bin/g2w.js`, files: bin/ lib/ skills/
-- `bin/g2w.js` — CLI entrypoint: install / update / uninstall / help
-- `lib/install.js` — copy skills, merge hooks, prompt for global vs local
-- README How 2 Install section updated to reflect `g2w install` flow
-- `.claude/settings.json` created with Trust Layer + A-Game + context warning hooks
+- Dynamic npm badge — auto-updates on every publish, no manual edits
+- Removed `g2w install` step — postinstall handles everything automatically
+- Fixed correct Gemini ASCII logo — saved permanently in `G2W-ASSETS.md` and `lib/logo.js`
+- Added green ASCII logo to `g2w` CLI output and install confirmation
+- Fought npm output suppression across 8 versions — final solution: `npm install -g @only1btayy/g2w && g2w`
+- Added uninstall — `npm uninstall -g @only1btayy/g2w` cleans up `~/.claude/` automatically via `preuninstall` hook
+- README updated — `&& g2w` install command, uninstall section, dynamic badge
+- Tightened definition of done in `build2gether` skill — must be tied to user's actual environment
+- Confirmed all 7 spec problems (from G2W-SPEC.md) are covered in skills
+- `pics/` folder cleaned up from repo
 
 **Key decisions:**
-- No postinstall — user runs `g2w install` explicitly after `npm install -g g2w`
-- Why: postinstall can't safely resolve local project path during global npm install
-- Global = `~/.claude/`, Local = `process.cwd()/.claude/`
-- Hooks merge safely — won't duplicate if already present
-- `ready2rock` removed — npm replaces it as the install mechanism
+- npm `foreground-scripts=false` by default suppresses ALL lifecycle output — no way around it. Solution: chain `&& g2w` so the logo shows right after install in the same terminal session
+- ASCII logo saved to `G2W-ASSETS.md` so it survives context clears — never lose it again
+- Uninstall wired via `preuninstall` npm lifecycle hook — one command removes everything cleanly
+- Definition of done must be environment-specific: "what build, what to open, what to click, what you'll see" — not "it compiled"
 
 ## In Progress
 (none)
 
 ## Next
-- [ ] Publish to npm (`npm publish`)
 - [ ] Run `/g2w:bring2life` on Blackhole VST as first real test case (proof of concept)
-- [ ] Clean up `pics/` folder from repo
-- [ ] Swap static badges for dynamic npm badges after publish
-- [ ] Add G2W-SESSION.md entry for today's decisions
