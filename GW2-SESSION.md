@@ -233,6 +233,19 @@ Many GW2 users are building alone with no team, no co-founder, no support system
 - GW2 isn't just a workflow system. It's a relationship protocol.
 - Suggested first line of README: "GW2 is a relationship protocol."
 
+### `/gw2:build2gether` — Talk Once. Plan Once. Build.
+The discuss and plan phases are bundled into one flow. No separate sessions. No repeating yourself.
+
+**How it works:**
+1. You talk — describe your vision, answer questions, think out loud. This IS the brainstorm.
+2. While you talk, research agents spin up silently in the background — tech stack, ecosystem, existing solutions. You never feel it.
+3. By the time the conversation ends, the plan is written, locked, and already informed by the research.
+4. Then `/gw2:get2work` fires and you build.
+
+**The principle:** Talk once. Plan once. Build. GW2 never makes you repeat yourself.
+
+Research is invisible. Planning is instant. Trust is the result.
+
 ## Key Decisions Made (2026-04-07)
 
 1. GW2 is language/framework agnostic — for everyone from vibe coders to senior engineers
@@ -245,3 +258,5 @@ Many GW2 users are building alone with no team, no co-founder, no support system
 8. GW2 = relationship protocol, not just workflow system
 9. Trust Layer gets hard rule: user's explicit instruction is a direct order — no agent may override it
 10. A-Game Hook added: fires before every edit/bug fix, forces think-first check on ripple effects — hook-delivered, not optional
+11. `/gw2:build2gether` bundles discuss + plan + research into one flow — talk once, plan locks, execute. Never repeat yourself.
+12. Brainstorm = the conversation itself. Research = silent background agents. Plan = what comes out the other end.
