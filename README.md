@@ -24,11 +24,7 @@ This is not a workflow system. Not a task runner. This is a protocol for buildin
 ---
 
 ```bash
-npm install -g @only1btayy/g2w
-```
-
-```
-✅ G2W installed at ~/.claude/ — 9 skills + hooks ready.
+npm install -g @only1btayy/g2w && g2w
 ```
 
 **Works on Mac, Windows, and Linux.**
@@ -145,7 +141,7 @@ Safe git operations — add, commit, push, status, log — run without approval 
 ## How 2 Install
 
 ```bash
-npm install -g @only1btayy/g2w
+npm install -g @only1btayy/g2w && g2w
 ```
 
 That's it. G2W installs globally into `~/.claude/` automatically — skills and hooks ready in every project, everywhere.
