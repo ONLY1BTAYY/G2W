@@ -9,7 +9,7 @@ You are resuming a G2W session. Get back up to speed fast. No fluff.
 
 ## Steps
 
-1. **Read `~/.g2w/CURRENT.md`** — this is the G2W runtime root. It tells you which project is active.
+1. **Read the G2W runtime root file** — the path is `~/.g2w/CURRENT.md` (on Windows: `C:/Users/[username]/.g2w/CURRENT.md`). This is the ONLY place to look. Do NOT read any `.g2w/` folder inside the working directory or project folder — those are old and wrong.
 
 2. **Check the Active Project:**
    - If an active project is set → read `~/.g2w/projects/[active-project]/CURRENT.md`
@@ -37,7 +37,8 @@ You are resuming a G2W session. Get back up to speed fast. No fluff.
 
 ## Rules
 
-- ALWAYS read `~/.g2w/CURRENT.md` first — never assume which project is active
+- ALWAYS read `~/.g2w/CURRENT.md` first (Windows: `C:/Users/[username]/.g2w/CURRENT.md`) — never assume which project is active
+- NEVER read `.g2w/CURRENT.md` from the working directory — that is the old system and must be ignored
 - Do not read files beyond what's needed for the current task
 - Do not start executing anything — this is orientation only
 - If docs look out of sync with the code, fix the doc FIRST before touching anything else
