@@ -26,6 +26,8 @@ You say "make this button this size" and it does something else and explains why
 
 G2W fixes all of that. Not by adding more rules but by building a system that genuinely earns trust.
 
+The problem was never intelligence. The problem was process.
+
 ---
 
 ## How It Works
@@ -59,6 +61,7 @@ Delivered via hook so it runs every single session, not just when the AI remembe
 - No edits outside the declared scope.
 - No commits without your approval.
 - "I don't know" instead of guessing — always.
+- Uncertainty is labeled, not hidden. `[Inference]` and `[Unverified]` are used so you always know what's confirmed and what isn't.
 - If scope creeps, it stops and flags it before touching anything.
 
 ### The A-Game Hook
@@ -68,6 +71,7 @@ Before any edit or bug fix, A-Game fires automatically.
 - What does this change touch?
 - What could break downstream?
 - Is this more complex than it looks?
+- Does every function, model, or method being referenced actually exist?
 
 Only after working through those questions does execution begin. Taking more time upfront is always better than going in circles.
 
