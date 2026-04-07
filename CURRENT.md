@@ -4,7 +4,7 @@ G2W design session 2 (2026-04-07) — audience strategy, onboarding flow, full c
 G2W design additions (2026-04-07) — Two new hook-delivered rules locked: (1) Trust Layer: user's explicit instruction is a direct order, no agent may override it. (2) A-Game Hook: fires before every edit/bug fix, forces think-first ripple-effect check before execution.
 
 ## In Progress
-G2W — design complete. Ready to build as its own open source repo.
+G2W — repo live, README written and polished. Building out command skill files next.
 
 ## Next
 - Build G2W as its own open source repo
