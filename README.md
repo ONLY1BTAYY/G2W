@@ -32,29 +32,56 @@ You start a conversation. You describe your vision. GW2 listens, asks smart ques
 
 No separate phases. No repeating yourself. Just a conversation that ends with something ready to build.
 
-### The Dev Squad
+### The Foundation
 
-Once the plan locks, a disciplined pipeline takes over.
+Once the plan locks, The Foundation takes over. Five roles. One mission. Get it right the first time.
 
-The **Planner** writes a complete plan with real decisions, no placeholders. The **Plan Reviewer** does an adversarial read and finds every way the plan could fail before a single line of code gets written. The **Coder** builds exactly what the locked plan says and nothing extra. The **Tester** verifies everything against the plan and loops until it's clean. The **Supervisor** manages the team.
+| Agent | Role |
+|---|---|
+| The Visionary | Writes a complete plan with real decisions and no placeholders |
+| The Challenger | Adversarial review — finds every way the plan could fail before coding starts |
+| The Builder | Builds exactly what the locked plan says, nothing extra |
+| The Inspector | Verifies everything against the plan and loops until it's clean |
+| The Leader | Manages the team and keeps everything on track |
 
-The plan is the contract. By the time coding starts, every decision has already been made.
+The plan is the contract. By the time The Builder touches a single line of code, every decision has already been made.
 
 ### The Trust Layer
 
 Delivered via hook so it runs every single session, not just when the AI remembers.
 
-Your explicit instruction is a direct order. No agent may override it, rationalize it away, or route around it. The AI answers your question first and then asks to proceed. It never edits code outside the declared scope. No commits without your approval. It says "I don't know" instead of guessing. If scope creeps, it stops and flags it before touching anything.
+- Your explicit instruction is a direct order. No agent may override it, rationalize it away, or route around it.
+- The AI answers your question first and then asks to proceed — never just acts.
+- No edits outside the declared scope.
+- No commits without your approval.
+- "I don't know" instead of guessing — always.
+- If scope creeps, it stops and flags it before touching anything.
 
 ### The A-Game Hook
 
-Before any edit or bug fix, A-Game fires automatically. What does this change touch? What could break downstream? Is this more complex than it looks? Only after working through those questions does execution begin. Taking more time upfront is always better than going in circles.
+Before any edit or bug fix, A-Game fires automatically.
+
+- What does this change touch?
+- What could break downstream?
+- Is this more complex than it looks?
+
+Only after working through those questions does execution begin. Taking more time upfront is always better than going in circles.
 
 ---
 
 ## The Commands
 
-**ready2rock** sets up GW2 in your project. **bring2life** onboards an existing codebase by scanning it, generating your doc files, and flagging anything it couldn't fill in confidently. **build2gether** starts a new project with a brainstorm, background research, and a locked plan all in one conversation. **back2it** picks up right where you left off. **get2work** executes the current task. **cut2it** is fast mode for small tasks with no ceremony. **back2basics** strips context and starts clean. **true2plan** verifies that what was built actually matches the plan. **true2dagame** is a full system health check.
+| Command | What It Does |
+|---|---|
+| `/gw2:ready2rock` | Set up GW2 in your project |
+| `/gw2:bring2life` | Onboard an existing codebase — scans it, generates your doc files, flags gaps |
+| `/gw2:build2gether` | Start a new project — brainstorm, research, and locked plan in one conversation |
+| `/gw2:back2it` | Pick up right where you left off |
+| `/gw2:get2work` | Execute the current task |
+| `/gw2:cut2it` | Fast mode — small tasks, no ceremony |
+| `/gw2:back2basics` | Strip context and start clean |
+| `/gw2:true2plan` | Verify that what was built actually matches the plan |
+| `/gw2:true2dagame` | Full system health check |
 
 ---
 
@@ -74,6 +101,6 @@ Speed comes from simplicity. Control comes from clarity. If you need a system to
 
 ## Status
 
-Under active development. First real-world test case is Blackhole VST running through bring2life.
+Under active development. First real-world test case is Blackhole VST running through `/gw2:bring2life`.
 
 *Built by ONLY1BTAYY*
