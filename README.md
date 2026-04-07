@@ -16,7 +16,7 @@ This is not a workflow system. Not a task runner. This is a protocol for buildin
 
 ---
 
-[![npm version](https://img.shields.io/badge/npm-v1.0.2-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/@only1btayy/g2w)
+[![npm version](https://img.shields.io/npm/v/%40only1btayy%2Fg2w?style=for-the-badge&logo=npm&logoColor=white&color=CB3837&label=npm)](https://www.npmjs.com/package/@only1btayy/g2w)
 [![license](https://img.shields.io/badge/license-MIT-6e7681?style=for-the-badge)](LICENSE)
 [![platform](https://img.shields.io/badge/platform-Claude%20Code-8957e5?style=for-the-badge)](https://claude.ai/code)
 [![status](https://img.shields.io/badge/status-In%20Development-d29922?style=for-the-badge)]()
