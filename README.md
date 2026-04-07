@@ -1,8 +1,12 @@
 # G2W
 
-**G2W is a relationship protocol.**
+The best relationships are built on trust. Trust comes from honesty, and honesty breeds clarity and understanding.
 
-Not a workflow system. Not a task runner. A protocol for building trust between you and your AI so what gets built is actually what you envisioned.
+I got tired of going in circles with Claude and others because the systems I was using were not set up in a way that builds trust between the user and the model. Some of the top CEOs and big business people who use AI are not concerned with the question — "can it build?" Instead they are focused on — "can we trust what it builds and can we ship it?"
+
+This is not a workflow system. Not a task runner. This is a protocol for building trust between you and your AI so what gets built is actually what you envisioned. No more back and forth and all the other bullshit that gets in the way.
+
+**G2W is a relationship protocol.**
 
 ---
 
