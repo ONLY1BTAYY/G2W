@@ -1,12 +1,11 @@
 ## Last Completed
-G2W README session (2026-04-07) — Trust-first opening rewrite, 10 commands locked (added /g2w:ready2save), README strengthened with process/labeling/explore principles from /wizard + Reality Filter posts. All pushed to GitHub.
+G2W README session 2 (2026-04-07) — Modular Doc System added as first How It Works section, dividers added between all sections, Git Without The Friction section added, /g2w:ready2save added as 10th command. All pushed.
 
 **Key decisions this session:**
-- ready2save added as 10th command — closes the session lifecycle loop, pairs with back2it. Even 10 felt right and it reinforces the system.
-- Reality Filter (epistemic honesty framework) validated G2W's Trust Layer direction — full incorporation into Trust Layer hook content is next, not README.
-- "The problem was never intelligence. The problem was process." added as the README thesis line.
-- Uncertainty labeling ([Inference], [Unverified]) added to Trust Layer section — governs communication, not just behavior.
-- Modular doc system handles inline doc updates during sessions; ready2save handles CURRENT.md + capturing the "why" behind decisions.
+- Modular Doc System belongs before The Foundation in the README — it's the knowledge base that exists before the pipeline ever fires.
+- Git friction section added after A-Game Hook — one command, add/commit/push, no interruptions.
+- Reality Filter content belongs in the Trust Layer hook file, not the README — README stays lean, hooks carry the detail.
+- The /wizard "explore before referencing" principle added to A-Game Hook — verify existence before use eliminates an entire category of bugs.
 
 ## In Progress
 Nothing — session wrapped clean.
