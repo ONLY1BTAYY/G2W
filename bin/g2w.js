@@ -12,7 +12,6 @@ if (command === 'install') {
 } else {
   process.stdout.write(`${LOGO}
 Usage:
-  g2w install    — install skills + hooks into ~/.claude/
   g2w update     — update skills to latest version
   g2w uninstall  — remove G2W
 
