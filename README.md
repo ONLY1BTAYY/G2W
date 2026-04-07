@@ -150,6 +150,14 @@ npm install -g @only1btayy/g2w
 
 That's it. G2W installs globally into `~/.claude/` automatically — skills and hooks ready in every project, everywhere.
 
+To uninstall:
+
+```bash
+npm uninstall -g @only1btayy/g2w
+```
+
+Skills and hooks are removed from `~/.claude/` automatically.
+
 > **Tip:** The logo renders in **bright green** in any terminal. On Windows Terminal or iTerm2, enable Retro/Bloom effects for the full glow.
 
 ---
