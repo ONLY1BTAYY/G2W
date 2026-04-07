@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const { LOGO } = require('../lib/logo');
 const [,, command = 'help'] = process.argv;
 
 if (command === 'install') {
@@ -9,12 +10,11 @@ if (command === 'install') {
 } else if (command === 'uninstall') {
   require('../lib/install').uninstall();
 } else {
-  console.log(`
-G2W — It's going to work or it's going to work.
-
+  process.stdout.write(`${LOGO}
 Usage:
-  g2w install    — set up G2W (choose global or local)
+  g2w install    — install skills + hooks into ~/.claude/
   g2w update     — update skills to latest version
   g2w uninstall  — remove G2W
+
 `);
 }
