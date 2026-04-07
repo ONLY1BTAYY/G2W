@@ -1,6 +1,6 @@
 <div align="center">
 
-![G2W](assets/logo.png)
+<img src="assets/logo.png" width="600" alt="G2W" />
 
 </div>
 
