@@ -12,7 +12,7 @@ You are executing a locked plan. Build exactly what it says. Nothing extra. Noth
 1. **Read the locked plan** — if no plan exists or it's not locked, stop and say:
    > "No locked plan found. Run `/g2w:build2gether` first."
 
-2. **Read `.g2w/CONVENTIONS.md`** — know the rules before touching code.
+2. **Read `CONVENTIONS.md`** — know the rules before touching code.
 
 3. **Declare scope** — before writing a single line, output:
    ```

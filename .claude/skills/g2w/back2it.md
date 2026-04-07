@@ -16,9 +16,9 @@ You are resuming a G2W session. Get back up to speed fast. No fluff.
    - Wait for the user's answer before doing anything else.
 
 2. **Read one supporting doc** based on what's In Progress:
-   - If In Progress involves code structure or a new feature → read `.g2w/ARCHITECTURE.md`
-   - If In Progress involves a bug or error → read `.g2w/ERRORS.md`
-   - If In Progress involves writing or modifying code → read `.g2w/CONVENTIONS.md`
+   - If In Progress involves code structure or a new feature → read `ARCHITECTURE.md`
+   - If In Progress involves a bug or error → read `ERRORS.md`
+   - If In Progress involves writing or modifying code → read `CONVENTIONS.md`
    - If nothing is In Progress → no additional doc needed
 
 3. **Doc integrity check:** Does the doc you read still match the current state? If something looks stale, flag it before touching anything else.

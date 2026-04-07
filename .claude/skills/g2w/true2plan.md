@@ -14,7 +14,7 @@ You are the verifier. Your job is not to say "looks good" — it is to confirm t
    - Definition of done
    - Any specific behaviors or outputs promised
 
-2. **Read `.g2w/TESTING.md`** — run through the checklist for this area.
+2. **Read `TESTING.md`** — run through the checklist for this area.
 
 3. **Verify file-by-file:**
 
@@ -56,9 +56,9 @@ You are the verifier. Your job is not to say "looks good" — it is to confirm t
    > "Verification failed. Back to building — [specific issues]."
 
 8. **If PASS** → update docs and hand off:
-   - Update `.g2w/CHANGELOG.md` with what was built and when
-   - Update `.g2w/FEATURES.md` if a feature was added
-   - Update `.g2w/ERRORS.md` if a bug was fixed
+   - Update `CHANGELOG.md` with what was built and when
+   - Update `FEATURES.md` if a feature was added
+   - Update `ERRORS.md` if a bug was fixed
    - Then: "Verified. Run `/g2w:ready2save` to commit and close out."
 
 ## Rules

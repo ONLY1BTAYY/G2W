@@ -15,7 +15,7 @@ Run each check and record ✅ PASS, ⚠️ WARNING, or ❌ FAIL.
 
 ### 1. Doc Sync Check
 
-For each G2W doc that exists in `.g2w/`:
+For each G2W doc that exists in this project:
 - Does `ARCHITECTURE.md` reflect the current tech stack and structure?
 - Does `FEATURES.md` reflect what's actually built vs what's broken vs what's next?
 - Does `ERRORS.md` list the current known bugs with accurate severity?
@@ -37,7 +37,7 @@ Flag any doc that looks stale or inconsistent with what you can observe.
 
 ### 3. Error Status Check
 
-- Read `.g2w/ERRORS.md`
+- Read `ERRORS.md`
 - Flag any CRITICAL or HIGH severity errors that are unresolved
 - Are any errors listed as "in progress" but stale (no recent activity)?
 
@@ -45,7 +45,7 @@ Flag any doc that looks stale or inconsistent with what you can observe.
 
 ### 4. CURRENT.md Freshness
 
-- Does `.g2w/CURRENT.md` reflect the last session accurately?
+- Does `CURRENT.md` reflect the last session accurately?
 - Is "In Progress" still actually in progress, or was it finished and not updated?
 - Is "Next" still the right next task?
 

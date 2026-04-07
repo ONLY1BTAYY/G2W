@@ -23,4 +23,10 @@ G2W v1.0.12 published — install flow fully working with green ASCII logo (2026
 (none)
 
 ## Next
-- [ ] Run `/g2w:bring2life` on Blackhole VST as first real test case (proof of concept)
+- [x] Run `/g2w:bring2life` on Blackhole VST as first real test case (proof of concept) ✅
+- [ ] Publish new npm version — skills updated to write/read from `.g2w/` subfolder instead of project root
+- [ ] All G2W docs now live in `.g2w/` inside each project — this is the new standard
+
+## Lessons Learned
+- **NEVER assume and jump ahead before hearing from the user.** When Brian says "you never did this before" or similar, STOP and wait for his answer. Do not launch agents or read files speculatively.
+- G2W exists specifically to prevent Claude from going rogue. Honor the protocol: wait for user interaction before acting.

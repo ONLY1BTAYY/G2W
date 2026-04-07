@@ -69,7 +69,7 @@ Fill in the `❓ [UNKNOWN]` gaps based on their answers.
 
 ## Phase 4 — Final Output
 
-Create a `.g2w/` folder in the project root if it doesn't exist. Write all completed doc files there.
+Write the completed doc files to the project root.
 
 Output a summary:
 ```
