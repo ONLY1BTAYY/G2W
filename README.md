@@ -2,7 +2,7 @@
 
 **G2W is a relationship protocol.**
 
-Not a workflow system. Not a task runner. A protocol for building trust between you and your AI so what gets built is actually what you meant.
+Not a workflow system. Not a task runner. A protocol for building trust between you and your AI so what gets built is actually what you envisioned.
 
 ---
 
