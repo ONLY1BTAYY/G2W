@@ -91,6 +91,12 @@ Only after working through those questions does execution begin. Taking more tim
 
 ---
 
+### Git Without The Friction
+
+Safe git operations — add, commit, push, status, log — run without approval prompts. One command handles the whole thing. Add, commit, push. Done. No multi-step back and forth, no unnecessary interruptions. You stay in flow.
+
+---
+
 ## The Commands
 
 | Command | What It Does |
