@@ -215,6 +215,67 @@ If any answer is unsatisfactory, the plan goes back to the Planner. They loop un
 
 ---
 
+---
+
+## The Foundation — Agent Team
+
+The Foundation is the named agent team that executes the G2W pipeline. Five roles. One mission: get it right the first time.
+
+| Agent | Role | Pipeline Phase |
+|-------|------|---------------|
+| **The Visionary** | Writes a complete plan with real decisions and zero placeholders | Phase 1: Planning |
+| **The Challenger** | Adversarial review — finds every way the plan could fail before coding starts | Phase 2: Plan Review |
+| **The Builder** | Builds exactly what the locked plan says, nothing extra | Phase 3: Build |
+| **The Inspector** | Verifies everything against the plan, loops until clean | Phase 4: Verify |
+| **The Leader** | Manages the team, keeps everything on track, owns the handoff | Phase 0 + 5 |
+
+**The plan is the contract.** By the time The Builder touches a single line of code, every decision has already been made.
+
+### How The Foundation Works
+
+```
+User runs bring2life → docs are live
+User defines task → The Leader activates
+
+The Leader:
+  → Hands requirements to The Visionary
+  → Visionary writes complete plan (no ❓ placeholders)
+  → Leader passes plan to The Challenger
+  → Challenger attacks the plan — finds every gap, edge case, assumption
+  → Plan loops between Visionary and Challenger until Challenger finds nothing wrong
+  → Leader LOCKS the plan — no agent can modify it after this point
+  → Leader hands locked plan to The Builder
+  → Builder builds exactly what the plan says — flags any deviation immediately
+  → Leader hands build to The Inspector
+  → Inspector verifies against the plan — loops until everything is clean
+  → Leader writes handoff, updates CURRENT.md, commits
+```
+
+### What's Built vs What's Needed
+
+| Skill | Status |
+|-------|--------|
+| `bring2life` | ✅ Built |
+| `back2it` | ✅ Built |
+| `build2gether` | ✅ Built |
+| `get2work` | ✅ Built |
+| `true2dagame` | ✅ Built |
+| `the-leader` | ❌ Not built |
+| `the-visionary` | ❌ Not built |
+| `the-challenger` | ❌ Not built |
+| `the-builder` | ❌ Not built |
+| `the-inspector` | ❌ Not built |
+
+### Rules for The Foundation
+
+- The Challenger's job is NOT "does this look good" — it is "find every way this fails"
+- The Builder touches ONLY the files declared in the locked plan — any deviation = hard stop
+- The Inspector does not call anything done until it is proven in the user's actual environment
+- The Leader never skips a phase under time pressure
+- bring2life must be complete (all 10 docs live) before The Foundation activates on any project
+
+---
+
 ## Open Source Goals
 
 - Language and framework agnostic — works for any project

@@ -303,3 +303,34 @@ Full install experience polish — logo, uninstall, spec coverage audit.
 6. README updated with uninstall section and `&& g2w` install command
 7. Spec coverage audit — all 7 problems from G2W-SPEC.md confirmed covered in skills. One gap found: definition of done was too vague. Tightened in `build2gether` — must be tied to user's actual environment (specific build, specific steps, specific expected result). "It compiled" is not a definition of done.
 8. `pics/` folder cleaned from repo — logo lives in `assets/logo.png`
+
+---
+
+# G2W Session Log — 2026-04-07 (Architecture Session)
+
+## What We Did
+
+No code was written. This was a pure design session — the most important one yet. It resolved a fundamental confusion baked into G2W's architecture and made decisions that change how every skill behaves.
+
+---
+
+## Key Decisions Made (2026-04-07 Architecture)
+
+### 1. Runtime vs Source — Fully Separated
+We had been conflating the G2W source project (`projects/g2w/`) with the G2W runtime (`~/.g2w/`). These are two completely different things and must be completely separate. Skills ALWAYS reference `~/.g2w/` as the runtime root — hardcoded, no exceptions. This was the root cause of the confusion in previous sessions where we didn't know which CURRENT.md we were talking about.
+
+### 2. Centralized Doc Storage at `~/.g2w/projects/`
+Brian didn't want `bring2life` creating `.g2w/` subfolders inside existing project codebases — zero footprint on projects. All G2W docs now live at `~/.g2w/projects/[project-name]/`. Follows the `~/.ssh/`, `~/.aws/` convention. Works for any user on any machine. `bring2life` scans the project, writes docs to `~/.g2w/projects/[name]/`, never touches the codebase.
+
+### 3. `~/.g2w/CURRENT.md` Tracks Active Project
+New structure includes: active project name, absolute path, and docs location. `bring2life` sets the active project when it runs. `back2it` reads this first — Brian never has to say what we're working on. `ready2save` reads this first — knows exactly where to write.
+
+### 4. PLAN.md Added as 11th Doc
+The 10 existing G2W docs are state docs (what IS). A plan is different — task-specific, lives for one Foundation run. Added `PLAN.md`: Visionary writes to it, Challenger reviews it, Builder executes from it, Inspector verifies against it. When done: summary appended to CHANGELOG.md, PLAN.md cleared. CURRENT.md notes "Active plan: PLAN.md" when one is live.
+
+### 5. The Foundation — Different Flow for Existing Codebases
+For a new project: Visionary → Challenger → Builder → Inspector (Leader throughout).
+For an existing codebase: Challenger first (adversarial audit), Inspector second (stress-tests, tries to break it), THEN if issues found → Visionary writes fix plan → Builder executes. `bring2life` always runs before The Foundation on existing projects — the docs it generates are the ground truth The Foundation works from. This is the correct way to run Blackhole through G2W: find what's broken first, then plan the fix.
+
+### 6. The Foundation — Correct Agent Order (from README)
+1. Visionary, 2. Challenger, 3. Builder, 4. Inspector, 5. Leader. Leader manages throughout — not first, not last, always present.

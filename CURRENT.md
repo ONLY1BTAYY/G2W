@@ -1,5 +1,5 @@
 ## Last Completed
-`.g2w/` subfolder convention established + bring2life POC on Blackhole VST (2026-04-07)
+Architecture session — runtime/source separation + centralized doc storage decisions (2026-04-07)
 
 **What was done:**
 - Dynamic npm badge — auto-updates on every publish, no manual edits
@@ -20,12 +20,30 @@
 - Definition of done must be environment-specific: "what build, what to open, what to click, what you'll see" — not "it compiled"
 
 ## In Progress
-(none)
+Updating all G2W skills to use `~/.g2w/` as runtime root + centralized doc storage
 
 ## Next
-- [x] Run `/g2w:bring2life` on Blackhole VST as first real test case (proof of concept) ✅
-- [ ] Publish new npm version — skills updated to write/read from `.g2w/` subfolder instead of project root
-- [ ] All G2W docs now live in `.g2w/` inside each project — this is the new standard
+- [ ] Update `~/.g2w/CURRENT.md` — add active project tracking structure
+- [ ] Update `bring2life` skill — write to `~/.g2w/projects/[name]/`, set active project, add PLAN.md as 11th doc
+- [ ] Update `back2it` skill — read from `~/.g2w/` runtime root, project picker if no active project set
+- [ ] Update `ready2save` skill — write to `~/.g2w/` runtime root
+- [ ] Update `get2work` skill — existing codebase Foundation flow (Challenger → Inspector → Visionary → Builder)
+- [ ] Build The Foundation skills using `superpowers:writing-skills`
+- [ ] Once Foundation built: run Blackhole VST through it as first real test
+
+## The Foundation — What It Is
+Five agents. One mission: get it right the first time.
+
+| Agent | Role |
+|-------|------|
+| The Leader | Manages the team, keeps everything on track |
+| The Visionary | Writes complete plan — real decisions, no placeholders |
+| The Challenger | Adversarial review — finds every way the plan could fail |
+| The Builder | Builds exactly what the locked plan says, nothing extra |
+| The Inspector | Verifies everything against the plan, loops until clean |
+
+The plan is the contract. Builder never touches code until Challenger approves.
+Full spec in `G2W-SPEC.md` under "The Foundation — Agent Team".
 
 ## Session Notes — 2026-04-07
 
@@ -46,6 +64,48 @@
 **What to read first next session:**
 - This file + `skills/back2it.md` and `skills/ready2save.md` (Brian updated them this session)
 
+## Session Notes — 2026-04-07/08
+
+**What actually happened (the full story):**
+
+Brian came in to resume G2W work. The active project in root `.g2w/CURRENT.md` pointed to `projects/g2w` but Claude didn't read G2W's CURRENT.md first. Instead Claude went straight to Blackhole when Brian mentioned it.
+
+Brian asked about a "code audit" that was in a previous plan. Claude couldn't find it anywhere — it was never saved. This is a direct failure of the G2W trust layer: if it's not in the files, it's lost.
+
+Claude then re-ran `bring2life` on both Blackhole projects even though bring2life had already been successfully run last session and the docs were already in `.g2w/` subfolders. This was wasted work.
+
+Brian got frustrated and said to wipe the Blackhole .g2w docs. Claude wiped them. Now the working docs from last session are gone.
+
+Brian then explained The Foundation — the 5-agent team (Visionary, Challenger, Builder, Inspector, Leader) that is supposed to be the core of G2W's execution pipeline. This was never built as skills. Claude implied G2W was ready when it wasn't. That's the core failure of this session.
+
+Brian wanted this all saved to CURRENT.md. Claude saved a bullet list instead of the full story. Brian had to explicitly call this out.
+
+**The Foundation — what it is and why it matters:**
+- This is the most important missing piece in G2W right now
+- Without it, bring2life generates docs but there's no trusted execution pipeline
+- Running Blackhole through G2W is pointless until The Foundation exists
+- The skills need to be built using `superpowers:writing-skills` — baseline test BEFORE writing each skill
+- Full spec is in `G2W-SPEC.md` under "The Foundation — Agent Team"
+
+**What NOT to do next session:**
+- Do NOT run bring2life on Blackhole again
+- Do NOT restore the Blackhole .g2w docs
+- Do NOT publish npm until The Foundation is built
+- Do NOT ask Brian the 3 questions about The Foundation again — he's already answered them in G2W-SPEC.md, read it first
+
+**What to do next session:**
+1. Read this file
+2. Read G2W-SPEC.md section "The Foundation — Agent Team"
+3. Read `superpowers:writing-skills` skill
+4. Ask Brian the minimum questions needed that aren't answered in the spec
+5. Build The Foundation skills
+
 ## Lessons Learned
 - **NEVER assume and jump ahead before hearing from the user.** When Brian says "you never did this before" or similar, STOP and wait for his answer. Do not launch agents or read files speculatively.
 - G2W exists specifically to prevent Claude from going rogue. Honor the protocol: wait for user interaction before acting.
+- **Read CURRENT.md for the active project FIRST before doing anything.** The root `.g2w/CURRENT.md` points to the active project. Read that project's CURRENT.md immediately.
+- **Saving means the full story, not a bullet list.** If something important happened in a session, write it as a narrative with enough context that the next Claude instance understands what went wrong and why.
+- **Don't call something saved until it actually captures what matters.**
+- **Always verify after saving — read the file back, confirm it's there. Never say "done" without proof.**
+- **Never say "I'll do that from now on" without immediately writing it down somewhere it will survive the session.**
+- **TODO (do this FIRST next session): Add verify rule to the existing Trust Layer PreToolUse prompt hook in settings.json — add "After every Write/Edit, read the file back and confirm what was saved before calling it done." Do NOT create a new hook. Edit the existing Trust Layer prompt hook. Use update-config skill. Test it fires.**
