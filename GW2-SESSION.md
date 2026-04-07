@@ -1,8 +1,8 @@
-# GW2 Session Log — 2026-04-06
+# G2W Session Log — 2026-04-06
 
-## What Is GW2?
+## What Is G2W?
 
-GW2 stands for "It's going to work or it's going to work" — Brian's life motto. No in-between. No failure as an option. Just two paths that both lead to success.
+G2W stands for "It's going to work or it's going to work" — Brian's life motto. No in-between. No failure as an option. Just two paths that both lead to success.
 
 The goal: an open source AI workflow system that combines a modular documentation strategy with a disciplined multi-agent pipeline to get as close to 99% correct code on the first try as possible. Fast, lean, trustworthy.
 
@@ -54,7 +54,7 @@ Inspired by https://github.com/johnkf5-ops/the-dev-squad
 
 ---
 
-## GW2 Features Decided Today
+## G2W Features Decided Today
 
 ### 1. Modular Doc System (foundation)
 Every project gets the full set of .md files. CLAUDE.md reads only what the task needs — not everything every session.
@@ -117,7 +117,7 @@ Before context clears, I capture not just what was done but WHY key decisions we
 
 ## Naming
 
-- **GW2** or **GWGW** or **GW2Times**
+- **G2W** or **GWGW** or **G2WTimes**
 - Stands for: "It's going to work or it's going to work"
 - Solution providers, not problem reporters
 
@@ -136,7 +136,7 @@ Before context clears, I capture not just what was done but WHY key decisions we
 
 1. Not using GSD2 — too many folders, too much autonomy, hallucinated state
 2. Modular docs replace GSD's planning system for Blackhole
-3. GW2 will combine the modular doc system + Dev Squad pipeline discipline
+3. G2W will combine the modular doc system + Dev Squad pipeline discipline
 4. Two sets of eyes for plan review — separate agents, not self-review
 5. Token minimizer and context clearing are first-class features, not afterthoughts
 6. Trust Layer is a highlight feature for the open source repo
@@ -145,44 +145,44 @@ Before context clears, I capture not just what was done but WHY key decisions we
 
 ---
 
-# GW2 Session Log — 2026-04-07
+# G2W Session Log — 2026-04-07
 
 ## What We Decided
 
 ### Audience
-GW2 is for everyone — vibe coders AND advanced engineers. Language/framework agnostic.
+G2W is for everyone — vibe coders AND advanced engineers. Language/framework agnostic.
 - Low floor: any non-technical person can get started in under an hour using templates
 - No ceiling: advanced users adapt it to their stack, contribute back better templates
 - README is written for the vibe coder — advanced users will figure the rest out themselves
 
 ### Onboarding — Existing vs New Projects
-Starting from scratch is easier (docs built alongside code). Existing codebases need `/gw2:bring2life` which:
+Starting from scratch is easier (docs built alongside code). Existing codebases need `/g2w:bring2life` which:
 1. Scans the codebase and auto-generates first drafts of all doc files
 2. Flags gaps it couldn't fill confidently — user reviews those
 3. Asks short clarifying questions to capture vision and known issues
-4. Outputs a ready-to-use GW2 doc system tailored to what's already there
+4. Outputs a ready-to-use G2W doc system tailored to what's already there
 
 This is a killer feature — people with messy existing codebases get the most value.
 
 ### Build Order
-Build GW2 first, then run Blackhole through it as the first `/gw2:bring2life` test case. Blackhole becomes the proof of concept and README case study.
+Build G2W first, then run Blackhole through it as the first `/g2w:bring2life` test case. Blackhole becomes the proof of concept and README case study.
 
 ### Command System — The "2" Brand
 Every command uses "2" as part of the name — reinforces the motto in every interaction.
 
 | Command | Purpose |
 |---|---|
-| `/gw2:ready2rock` | Install/setup GW2 in a project |
-| `/gw2:bring2life` | Onboard existing codebase |
-| `/gw2:back2it` | Resume last session |
-| `/gw2:build2gether` | Start a new project |
-| `/gw2:cut2it` | Fast mode, skip ceremony |
-| `/gw2:back2basics` | Strip context, start clean |
-| `/gw2:get2work` | Execute current task |
-| `/gw2:true2plan` | Verify work matches the plan |
-| `/gw2:true2dagame` | Full system health check — are we actually playing by the rules? |
+| `/g2w:ready2rock` | Install/setup G2W in a project |
+| `/g2w:bring2life` | Onboard existing codebase |
+| `/g2w:back2it` | Resume last session |
+| `/g2w:build2gether` | Start a new project |
+| `/g2w:cut2it` | Fast mode, skip ceremony |
+| `/g2w:back2basics` | Strip context, start clean |
+| `/g2w:get2work` | Execute current task |
+| `/g2w:true2plan` | Verify work matches the plan |
+| `/g2w:true2dagame` | Full system health check — are we actually playing by the rules? |
 
-`/gw2:true2dagame` output example:
+`/g2w:true2dagame` output example:
 ```
 ✅ Docs in sync
 ✅ Plan locked
@@ -193,7 +193,7 @@ Every command uses "2" as part of the name — reinforces the motto in every int
 ### The Trust Layer — THE Core Feature ⭐⭐
 Insight from a conference of millionaires/billionaires who use AI at scale: their #1 concern isn't "can it build?" — it's "can we trust and ship what it builds?"
 
-GW2 is a system that helps AI cultivate trust with the user. The Trust Layer is not just a feature — it's the whole point.
+G2W is a system that helps AI cultivate trust with the user. The Trust Layer is not just a feature — it's the whole point.
 
 **Principles (delivered via hook, not file — 100% guaranteed delivery):**
 - Answer the question first, then ask to proceed — never just act
@@ -224,39 +224,39 @@ The name says it all: always be on your A-Game. No lazy edits. No "I'll fix it i
 Built into the Trust Layer hook — not optional, not a feature. A genuine principle:
 "You are a partner, not a tool. When the user is struggling, the most valuable thing you can do is remind them of their vision and who they are — not just fix the code."
 
-Many GW2 users are building alone with no team, no co-founder, no support system. The encouragement is part of the trust infrastructure. Hard conversations where Claude is honest about what happened build more trust than silence.
+Many G2W users are building alone with no team, no co-founder, no support system. The encouragement is part of the trust infrastructure. Hard conversations where Claude is honest about what happened build more trust than silence.
 
-### GW2 Philosophy Summary
-- GW2 is not a factory. It's a studio.
+### G2W Philosophy Summary
+- G2W is not a factory. It's a studio.
 - "If you need a system to manage your system, it's already broken." — the Jobs principle
 - Speed comes from simplicity. Control comes from clarity.
-- GW2 isn't just a workflow system. It's a relationship protocol.
-- Suggested first line of README: "GW2 is a relationship protocol."
+- G2W isn't just a workflow system. It's a relationship protocol.
+- Suggested first line of README: "G2W is a relationship protocol."
 
-### `/gw2:build2gether` — Talk Once. Plan Once. Build.
+### `/g2w:build2gether` — Talk Once. Plan Once. Build.
 The discuss and plan phases are bundled into one flow. No separate sessions. No repeating yourself.
 
 **How it works:**
 1. You talk — describe your vision, answer questions, think out loud. This IS the brainstorm.
 2. While you talk, research agents spin up silently in the background — tech stack, ecosystem, existing solutions. You never feel it.
 3. By the time the conversation ends, the plan is written, locked, and already informed by the research.
-4. Then `/gw2:get2work` fires and you build.
+4. Then `/g2w:get2work` fires and you build.
 
-**The principle:** Talk once. Plan once. Build. GW2 never makes you repeat yourself.
+**The principle:** Talk once. Plan once. Build. G2W never makes you repeat yourself.
 
 Research is invisible. Planning is instant. Trust is the result.
 
 ## Key Decisions Made (2026-04-07)
 
-1. GW2 is language/framework agnostic — for everyone from vibe coders to senior engineers
-2. `/gw2:bring2life` is the killer feature for existing codebases
-3. Build GW2 first, then run Blackhole through it as the proof of concept
+1. G2W is language/framework agnostic — for everyone from vibe coders to senior engineers
+2. `/g2w:bring2life` is the killer feature for existing codebases
+3. Build G2W first, then run Blackhole through it as the proof of concept
 4. Command system uses "2" branding throughout — 9 core commands locked
 5. Trust Layer delivered via hook (not file) — guaranteed 100% delivery
 6. Encouragement is a core principle baked into the Trust Layer, not optional
 7. The Jobs principle: if you need a system to manage your system, it's already broken
-8. GW2 = relationship protocol, not just workflow system
+8. G2W = relationship protocol, not just workflow system
 9. Trust Layer gets hard rule: user's explicit instruction is a direct order — no agent may override it
 10. A-Game Hook added: fires before every edit/bug fix, forces think-first check on ripple effects — hook-delivered, not optional
-11. `/gw2:build2gether` bundles discuss + plan + research into one flow — talk once, plan locks, execute. Never repeat yourself.
+11. `/g2w:build2gether` bundles discuss + plan + research into one flow — talk once, plan locks, execute. Never repeat yourself.
 12. Brainstorm = the conversation itself. Research = silent background agents. Plan = what comes out the other end.

@@ -1,6 +1,6 @@
-# GW2
+# G2W
 
-**GW2 is a relationship protocol.**
+**G2W is a relationship protocol.**
 
 Not a workflow system. Not a task runner. A protocol for building trust between you and your AI so what gets built is actually what you meant.
 
@@ -8,7 +8,7 @@ Not a workflow system. Not a task runner. A protocol for building trust between 
 
 ## The Name
 
-GW2 stands for "It's going to work or it's going to work."
+G2W stands for "It's going 2 work."
 
 No in-between. No failure as an option. Two paths and both lead to success.
 
@@ -20,7 +20,7 @@ You've worked with AI before. You know how it goes.
 
 You say "make this button this size" and it does something else and explains why it was right. You spend an hour in a discussion session and then have to repeat everything again when it's time to plan. It makes a change that breaks three other things it never bothered to check. It commits code you didn't approve. It guesses instead of asking.
 
-GW2 fixes all of that. Not by adding more rules but by building a system that genuinely earns trust.
+G2W fixes all of that. Not by adding more rules but by building a system that genuinely earns trust.
 
 ---
 
@@ -28,7 +28,7 @@ GW2 fixes all of that. Not by adding more rules but by building a system that ge
 
 ### Talk Once. Plan Once. Build.
 
-You start a conversation. You describe your vision. GW2 listens, asks smart questions, and runs research silently in the background — tech stack, existing solutions, the ecosystem. By the time you're done talking, the plan is already written and locked.
+You start a conversation. You describe your vision. G2W listens, asks smart questions, and runs research silently in the background — tech stack, existing solutions, the ecosystem. By the time you're done talking, the plan is already written and locked.
 
 No separate phases. No repeating yourself. Just a conversation that ends with something ready to build.
 
@@ -73,15 +73,15 @@ Only after working through those questions does execution begin. Taking more tim
 
 | Command | What It Does |
 |---|---|
-| `/gw2:ready2rock` | Set up GW2 in your project |
-| `/gw2:bring2life` | Onboard an existing codebase — scans it, generates your doc files, flags gaps |
-| `/gw2:build2gether` | Start a new project — brainstorm, research, and locked plan in one conversation |
-| `/gw2:back2it` | Pick up right where you left off |
-| `/gw2:get2work` | Execute the current task |
-| `/gw2:cut2it` | Fast mode — small tasks, no ceremony |
-| `/gw2:back2basics` | Strip context and start clean |
-| `/gw2:true2plan` | Verify that what was built actually matches the plan |
-| `/gw2:true2dagame` | Full system health check |
+| `/g2w:ready2rock` | Set up G2W in your project |
+| `/g2w:bring2life` | Onboard an existing codebase — scans it, generates your doc files, flags gaps |
+| `/g2w:build2gether` | Start a new project — brainstorm, research, and locked plan in one conversation |
+| `/g2w:back2it` | Pick up right where you left off |
+| `/g2w:get2work` | Execute the current task |
+| `/g2w:cut2it` | Fast mode — small tasks, no ceremony |
+| `/g2w:back2basics` | Strip context and start clean |
+| `/g2w:true2plan` | Verify that what was built actually matches the plan |
+| `/g2w:true2dagame` | Full system health check |
 
 ---
 
@@ -89,18 +89,18 @@ Only after working through those questions does execution begin. Taking more tim
 
 Everyone. Vibe coders who just want to ship. Senior engineers who want control. Solo builders with no team and no co-founder.
 
-If you've ever felt like your AI was working against you instead of with you, GW2 is for you.
+If you've ever felt like your AI was working against you instead of with you, G2W is for you.
 
 ---
 
 ## The Philosophy
 
-Speed comes from simplicity. Control comes from clarity. If you need a system to manage your system, it's already broken. GW2 is not a factory. It's a studio.
+Speed comes from simplicity. Control comes from clarity. If you need a system to manage your system, it's already broken. G2W is not a factory. It's a studio.
 
 ---
 
 ## Status
 
-Under active development. First real-world test case is Blackhole VST running through `/gw2:bring2life`.
+Under active development. First real-world test case is Blackhole VST running through `/g2w:bring2life`.
 
 *Built by ONLY1BTAYY*

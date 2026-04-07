@@ -1,13 +1,13 @@
-# GW2 — System Specification
+# G2W — System Specification
 
 > "It's going to work or it's going to work."
 > There is no in-between when it comes to reaching our goals.
 
-GW2 is an open source AI workflow system designed to get as close to 99% correct code on the first try as possible — while keeping token usage lean, context clean, and trust unbroken.
+G2W is an open source AI workflow system designed to get as close to 99% correct code on the first try as possible — while keeping token usage lean, context clean, and trust unbroken.
 
 ---
 
-## The Problem GW2 Solves
+## The Problem G2W Solves
 
 Most AI coding workflows fail in one of four ways:
 
@@ -16,7 +16,7 @@ Most AI coding workflows fail in one of four ways:
 3. **No verification loop** — "it should work" replaces proof that it actually does
 4. **Trust collapse** — the AI acts without asking, invents responses, fabricates history
 
-GW2 fixes all four.
+G2W fixes all four.
 
 ---
 
@@ -34,7 +34,7 @@ GW2 fixes all four.
 
 ### Layer 1 — The Knowledge Base (Modular Docs)
 
-Every GW2 project gets this set of files:
+Every G2W project gets this set of files:
 
 | File | Purpose | When to Read |
 |------|---------|-------------|
@@ -97,7 +97,7 @@ Phase 5: Commit + Clear
 
 ### Layer 3 — The Trust Layer ⭐
 
-The Trust Layer is GW2's most important feature. Hallucination and fabrication happen when the AI fills gaps with invented context. GW2 makes this structurally impossible.
+The Trust Layer is G2W's most important feature. Hallucination and fabrication happen when the AI fills gaps with invented context. G2W makes this structurally impossible.
 
 **Hard rules — no exceptions:**
 
@@ -112,7 +112,7 @@ The Trust Layer is GW2's most important feature. Hallucination and fabrication h
 
 ### Layer 4 — Token Discipline
 
-GW2 is designed to be lean. Every token spent should serve the current task.
+G2W is designed to be lean. Every token spent should serve the current task.
 
 **Rules:**
 - Read only what the current task requires — no exploratory reads
@@ -225,7 +225,7 @@ If any answer is unsatisfactory, the plan goes back to the Planner. They loop un
 
 ---
 
-## What GW2 Is Not
+## What G2W Is Not
 
 - Not a replacement for human judgment — it's a structure that makes AI judgment more reliable
 - Not a magic fix — garbage requirements still produce garbage results
