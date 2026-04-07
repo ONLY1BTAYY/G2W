@@ -37,7 +37,7 @@ Once requirements are locked and research is complete:
 **Planner Agent** writes a complete plan:
 - No placeholders. Actual code, actual file names, actual decisions.
 - Declares exactly which files will be created or modified — nothing undeclared
-- Writes a concrete definition of done for this specific task
+- Writes a definition of done tied to the user's actual environment — not "it compiled." Specific steps: what build to run, what to open, what to click, what the exact expected result is. If you can't describe how to verify it in the user's setup, the definition of done is not done.
 - Estimates scope honestly: small / medium / large
 
 **Reviewer Agent** does an adversarial pass:
