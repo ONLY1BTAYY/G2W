@@ -16,7 +16,7 @@ This is not a workflow system. Not a task runner. This is a protocol for buildin
 
 ---
 
-[![npm version](https://img.shields.io/badge/npm-v0.1.0-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/g2w)
+[![npm version](https://img.shields.io/badge/npm-v1.0.2-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/@only1btayy/g2w)
 [![license](https://img.shields.io/badge/license-MIT-6e7681?style=for-the-badge)](LICENSE)
 [![platform](https://img.shields.io/badge/platform-Claude%20Code-8957e5?style=for-the-badge)](https://claude.ai/code)
 [![status](https://img.shields.io/badge/status-In%20Development-d29922?style=for-the-badge)]()
@@ -24,18 +24,11 @@ This is not a workflow system. Not a task runner. This is a protocol for buildin
 ---
 
 ```bash
-npm install -g g2w
-```
-
-```bash
-g2w install
+npm install -g @only1btayy/g2w
 ```
 
 ```
-  1. Global  ~/.claude/     available in all projects
-  2. Local   ./.claude/     this project only
-
-✅ G2W installed — 9 skills + hooks ready.
+✅ G2W installed at ~/.claude/ — 9 skills + hooks ready.
 ```
 
 **Works on Mac, Windows, and Linux.**
@@ -152,23 +145,10 @@ Safe git operations — add, commit, push, status, log — run without approval 
 ## How 2 Install
 
 ```bash
-npm install -g g2w
+npm install -g @only1btayy/g2w
 ```
 
-Then `cd` into your project and run:
-
-```bash
-g2w install
-```
-
-You'll be asked:
-
-```
-  1. Global  ~/.claude/     available in all projects
-  2. Local   ./.claude/     this project only
-```
-
-Pick 1 to set it and forget it. Pick 2 if you want G2W in just one project.
+That's it. G2W installs globally into `~/.claude/` automatically — skills and hooks ready in every project, everywhere.
 
 > **Tip:** The logo renders in **bright green** in any terminal. On Windows Terminal or iTerm2, enable Retro/Bloom effects for the full glow.
 
