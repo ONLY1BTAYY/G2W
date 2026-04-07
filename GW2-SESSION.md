@@ -181,6 +181,7 @@ Every command uses "2" as part of the name — reinforces the motto in every int
 | `/g2w:get2work` | Execute current task |
 | `/g2w:true2plan` | Verify work matches the plan |
 | `/g2w:true2dagame` | Full system health check — are we actually playing by the rules? |
+| `/g2w:ready2save` | Wrap up the session — update CURRENT.md, capture key decisions and reasoning, hand off cleanly |
 
 `/g2w:true2dagame` output example:
 ```

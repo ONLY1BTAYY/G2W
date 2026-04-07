@@ -90,6 +90,7 @@ Only after working through those questions does execution begin. Taking more tim
 | `/g2w:back2basics` | Strip context and start clean |
 | `/g2w:true2plan` | Verify that what was built actually matches the plan |
 | `/g2w:true2dagame` | Full system health check |
+| `/g2w:ready2save` | Wrap up the session — update CURRENT.md, capture key decisions and the reasoning behind them, hand off cleanly |
 
 ---
 
