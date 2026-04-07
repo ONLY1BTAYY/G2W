@@ -1,5 +1,5 @@
 ## Last Completed
-G2W v1.0.12 published — install flow fully working with green ASCII logo (2026-04-08)
+`.g2w/` subfolder convention established + bring2life POC on Blackhole VST (2026-04-07)
 
 **What was done:**
 - Dynamic npm badge — auto-updates on every publish, no manual edits
@@ -26,6 +26,25 @@ G2W v1.0.12 published — install flow fully working with green ASCII logo (2026
 - [x] Run `/g2w:bring2life` on Blackhole VST as first real test case (proof of concept) ✅
 - [ ] Publish new npm version — skills updated to write/read from `.g2w/` subfolder instead of project root
 - [ ] All G2W docs now live in `.g2w/` inside each project — this is the new standard
+
+## Session Notes — 2026-04-07
+
+**What was built:**
+- Ran `bring2life` on Blackhole VST v1.2 as first real-world G2W POC
+  - Blackhole C++ VST already had most docs — created missing `CURRENT.md`
+  - Generated all 10 G2W docs fresh for `blackhole-ui-v2/` (React UI repo had nothing)
+- Moved all generated docs into `.g2w/` subfolders inside each project
+- Updated 6 skills (`bring2life`, `back2it`, `ready2save`, `get2work`, `true2plan`, `true2dagame`) to read/write from `.g2w/` instead of project root
+- Synced skill changes to `projects/g2w/skills/` (npm source)
+- Brian also refined `back2it` to use a root-level `.g2w/CURRENT.md` pointer system (active project tracking)
+- Brian refined `ready2save` to extract decisions from conversation history automatically
+
+**Key decisions & WHY:**
+- `.g2w/` subfolder (not project root) — keeps G2W docs isolated from GSD's `.planning/` mess and source files. Follows `.git/`, `.eslintrc` pattern. Clean, invisible unless you look.
+- Central pointer (`Claudes Brain root .g2w/CURRENT.md` with `active: projects/[x]`) — so `back2it` always knows which project to resume without asking.
+
+**What to read first next session:**
+- This file + `skills/back2it.md` and `skills/ready2save.md` (Brian updated them this session)
 
 ## Lessons Learned
 - **NEVER assume and jump ahead before hearing from the user.** When Brian says "you never did this before" or similar, STOP and wait for his answer. Do not launch agents or read files speculatively.

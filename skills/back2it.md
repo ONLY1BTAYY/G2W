@@ -10,10 +10,11 @@ You are resuming a G2W session. Get back up to speed fast. No fluff.
 ## Steps
 
 1. **Find the active project** — Read `.g2w/CURRENT.md` in the `Claudes Brain` root (the top-level working directory).
-   - If it contains a line like `active: projects/[folder]`, read `projects/[folder]/.g2w/CURRENT.md` as your source of truth.
-   - If the root `.g2w/CURRENT.md` is missing or has no `active:` line, say:
+   - If it contains a line like `active: projects/[folder]`, show the user:
+     > "Last active project: **[folder]** — is that the one you want to resume, or a different project?"
+   - If the root `.g2w/CURRENT.md` is missing or has no `active:` line, list all folders in `projects/` and ask:
      > "No active project found. Which project were you working on?"
-   - Wait for the user's answer before doing anything else.
+   - Wait for the user to confirm before loading anything.
 
 2. **Read one supporting doc** based on what's In Progress:
    - If In Progress involves code structure or a new feature → read `.g2w/ARCHITECTURE.md`
