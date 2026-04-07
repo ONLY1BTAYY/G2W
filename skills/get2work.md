@@ -64,6 +64,16 @@ The Foundation goes in as auditors first. Do not plan or build anything yet.
    ```
    Wait for the user to approve scope. Do not proceed without approval.
 
+3b. **Write scope contract** — immediately after approval, prepend this block to `~/.g2w/CURRENT.md` (replace any existing `## Scope` block):
+   ```
+   ## Scope
+   task: <one sentence from the plan>
+   command: get2work
+   files:
+     - <every file from the declaration above>
+   ```
+   This is what the scope guard hook reads. Do not skip. If this step fails, stop and report it — do not proceed without the scope block written.
+
 4. **Build** — execute the plan in order:
    - One logical unit at a time
    - After each unit: brief status ("Done: [what was just built]")

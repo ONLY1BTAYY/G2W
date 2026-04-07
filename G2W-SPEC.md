@@ -260,11 +260,11 @@ The Leader:
 | `build2gether` | ✅ Built |
 | `get2work` | ✅ Built |
 | `true2dagame` | ✅ Built |
-| `the-leader` | ❌ Not built |
-| `the-visionary` | ❌ Not built |
-| `the-challenger` | ❌ Not built |
-| `the-builder` | ❌ Not built |
-| `the-inspector` | ❌ Not built |
+| `the-leader` | ✅ Built |
+| `the-visionary` | ✅ Built |
+| `the-challenger` | ✅ Built |
+| `the-builder` | ✅ Built |
+| `the-inspector` | ✅ Built |
 
 ### Rules for The Foundation
 

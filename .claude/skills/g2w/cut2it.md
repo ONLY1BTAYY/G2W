@@ -29,6 +29,16 @@ If you're unsure about any of these → use `/g2w:build2gether` instead.
    ```
    Wait for approval.
 
+2b. **Write scope contract** — immediately after approval, prepend this block to `~/.g2w/CURRENT.md` (replace any existing `## Scope` block):
+   ```
+   ## Scope
+   task: <one sentence description>
+   command: cut2it
+   files:
+     - <every file from the declaration above>
+   ```
+   This is what the scope guard hook reads. Do not skip. If this step fails, stop and report it — do not proceed without the scope block written.
+
 3. **Build** — fast, focused, exactly what was described. Nothing extra.
 
 4. **Verify** — show proof it works. Do not say "should work."

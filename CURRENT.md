@@ -1,21 +1,33 @@
 ## Last Completed
-Skills updated — runtime/source separation fully wired (2026-04-07)
+Trust Layer upgraded to guardrail-tier + all 5 Foundation skills built (2026-04-07)
 
-**What was done:**
-- `~/.g2w/` runtime created with `projects/` subfolder and active project tracking
-- `bring2life` — writes to `~/.g2w/projects/[name]/`, sets active project, adds PLAN.md as 11th doc
-- `back2it` — reads `~/.g2w/CURRENT.md` first, project picker if no active project
-- `ready2save` — reads/writes to `~/.g2w/` runtime root
-- `get2work` — full existing codebase Foundation flow built in
-- All 4 skills synced to `projects/g2w/skills/` (npm source) and pushed
+**What was done — Trust Layer / A-Game sprint:**
+- `~/.claude/hooks/g2w-scope-guard.js` — new PreToolUse command hook. Reads `## Scope` block from `~/.g2w/CURRENT.md`, returns exit code 1 (hard stop) if file being edited is not in declared scope. Warns loudly (not silently passes) if CURRENT.md exists but has no Scope block.
+- `~/.claude/hooks/g2w-agame.js` — new PreToolUse command hook. Fires before every Write/Edit, outputs all 4 A-Game questions as `additionalContext`. Visible audit trail, not a hard stop (by design — forcing out-loud reasoning IS the enforcement).
+- `get2work.md` + `cut2it.md` — both updated with step 3b/2b: immediately after scope approval, write `## Scope` block to `~/.g2w/CURRENT.md`. This is what the hook reads. Synced to `.claude/skills/g2w/`.
+- `settings.json` — scope guard wired as first PreToolUse command hook, A-Game second, then existing prompt-guard and Trust Layer behavioral prompt. Trust Layer prompt stripped of A-Game (now has its own hook). All README claims now technically backed.
+- Design decision locked: CURRENT.md is task-level scope contract (not PLAN.md). Hooks always read from `~/.g2w/CURRENT.md`. Rewritten at start of every `get2work` or `cut2it` session.
+
+**What was done — Foundation skills:**
+- `the-visionary.md` — zero unresolved decisions, Builder must not need to ask a single question
+- `the-challenger.md` — pure adversarial, no conditional passes, no "supportive-adversarial", rationalization table
+- `the-builder.md` — locked to declared scope, hard stop on any deviation, names the "while I'm in here" rationalization explicitly
+- `the-inspector.md` — proof-based verification only, loops until clean, user must confirm in actual environment
+- `the-leader.md` — owns full pipeline, no phase skipping under any pressure, rationalization table, "should be fine" = hard stop
+- All 5 synced to `projects/g2w/skills/` and `.claude/skills/g2w/`. G2W-SPEC.md status table updated to ✅.
+- Baseline tests run on all 5 agents before writing — failures caught and addressed in each skill.
+
+**Key decisions & WHY:**
+- A-Game uses `additionalContext` not exit code 1 — forcing visible out-loud reasoning is stronger than a hard stop for judgment questions. Hard stops are for scope violations only.
+- Scope guard warns loudly (not silently passes) when CURRENT.md exists but has no Scope block — prevents invisible failure mode where guard does nothing mid-session.
+- Trust Layer behavioral claims (answer first, no commits without approval, I don't know instead of guessing) remain prompt-tier — no structural enforcement equivalent exists for behavioral rules. README is honest about the distinction.
 
 ## In Progress
 (none)
 
 ## Next
-- [ ] Build The Foundation skills using `superpowers:writing-skills` — baseline test BEFORE writing each skill
-- [ ] Run Blackhole VST through `bring2life` → `get2work` as first real test
-- [ ] Trust Layer hook fix: add verify rule to existing PreToolUse hook in settings.json (edit existing hook, don't create new one)
+- [ ] Run Blackhole VST through `bring2life` → `get2work` as first real test of The Foundation
+- [ ] npm publish once Blackhole test passes (The Foundation is now complete)
 
 ## The Foundation — What It Is
 Five agents. One mission: get it right the first time.
