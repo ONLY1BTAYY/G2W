@@ -114,11 +114,23 @@ Safe git operations — add, commit, push, status, log — run without approval 
 
 ---
 
+## How 2 Install
+
+```bash
+npm install -g g2w
+```
+
+That's it. G2W copies its skills and hooks directly into your Claude Code setup. Open a new project, type a command, and you're in.
+
+---
+
 ## Who It's For
 
-Everyone. Vibe coders who just want to ship. Senior engineers who want control. Solo builders with no team and no co-founder.
+Everyone tired of the bullshit. Vibe coders who just want to ship. Senior engineers who want control. Solo builders with no team and no co-founder.
 
 If you've ever felt like your AI was working against you instead of with you, G2W is for you.
+
+G2W works in other models — the Modular Doc System and commands are model-agnostic. But Claude Code is where it's fully alive. The Trust Layer, A-Game Hook, and context warnings are all hook-delivered, which means they run every single session without relying on the AI to remember. Other models get the workflow. Claude Code gets the guarantees.
 
 ---
 
