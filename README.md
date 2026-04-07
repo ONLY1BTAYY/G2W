@@ -8,7 +8,7 @@ Not a workflow system. Not a task runner. A protocol for building trust between 
 
 ## The Name
 
-G2W stands for "It's going 2 work."
+I named G2W after my motto in life — "It's going to work or it's going to work." This is a perspective shift I had that allows me to view even the apparent losses in life as wins because the gems are in the data. Every loss, every mistake, every doubt and fear we have is data that is filled with gems. We just have to choose to look at it that way. The people who change the world are often considered crazy and delusional until they actually change it. Then the "crazy" becomes genius and the "delusional" becomes relentless. I want you to dare to be relentless in your approach to the challenges in life and remember — it's going to work or it's going to work — ain't no other options.
 
 No in-between. No failure as an option. Two paths and both lead to success.
 
