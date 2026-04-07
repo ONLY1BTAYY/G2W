@@ -13,7 +13,8 @@
     "bin/",
     "lib/",
     "scripts/",
-    "skills/"
+    "skills/",
+    "hooks/"
   ],
   "engines": {
     "node": ">=18"

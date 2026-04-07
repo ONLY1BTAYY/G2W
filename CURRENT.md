@@ -1,5 +1,5 @@
 ## Last Completed
-Trust Layer upgraded to guardrail-tier + all 5 Foundation skills built (2026-04-07)
+Trust Layer upgraded to guardrail-tier + Foundation skills built + hooks ship on install (2026-04-07)
 
 **What was done — Trust Layer / A-Game sprint:**
 - `~/.claude/hooks/g2w-scope-guard.js` — new PreToolUse command hook. Reads `## Scope` block from `~/.g2w/CURRENT.md`, returns exit code 1 (hard stop) if file being edited is not in declared scope. Warns loudly (not silently passes) if CURRENT.md exists but has no Scope block.
