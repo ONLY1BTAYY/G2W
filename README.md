@@ -1,3 +1,15 @@
+```
+  ________  ________  ___       __
+ |\   ____\|\_____  \|\  \     |\  \
+ \ \  \___| \|___/  /\ \  \    \ \  \
+  \ \  \  ___   /  / /\ \  \  __\ \  \
+   \ \  |\  \ /  /_/__\ \  \|\__\_\  \
+    \ \______/|\________\ \____________\
+     \|______| \|_______| \|____________|
+
+  it's going to work or it's going to work
+```
+
 # G2W
 
 The best relationships are built on trust. Trust comes from honesty, and honesty breeds clarity and understanding.
@@ -7,6 +19,33 @@ I got tired of going in circles with Claude and others because the systems I was
 This is not a workflow system. Not a task runner. This is a protocol for building trust between you and your AI so what gets built is actually what you envisioned. No more back and forth and all the other bullshit that gets in the way.
 
 **G2W is a relationship protocol.**
+
+---
+
+[![npm version](https://img.shields.io/badge/npm-v0.1.0-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/g2w)
+[![license](https://img.shields.io/badge/license-MIT-6e7681?style=for-the-badge)](LICENSE)
+[![platform](https://img.shields.io/badge/platform-Claude%20Code-8957e5?style=for-the-badge)](https://claude.ai/code)
+[![status](https://img.shields.io/badge/status-In%20Development-d29922?style=for-the-badge)]()
+
+---
+
+```bash
+npm install -g g2w
+```
+
+```
+✓ Installing G2W
+✓ Installing skills  →  ~/.claude/skills/
+✓ Installing hooks   →  ~/.claude/hooks/
+
+Done. Run /g2w:build2gether to start.
+```
+
+**Works on Mac, Windows, and Linux.**
+
+---
+
+[The Name](#the-name) · [The Problem](#the-problem) · [How It Works](#how-it-works) · [The Commands](#the-commands) · [How 2 Install](#how-2-install) · [Who It's For](#who-its-for) · [Philosophy](#the-philosophy)
 
 ---
 
@@ -101,7 +140,6 @@ Safe git operations — add, commit, push, status, log — run without approval 
 
 | Command | What It Does |
 |---|---|
-| `/g2w:ready2rock` | Set up G2W in your project |
 | `/g2w:bring2life` | Onboard an existing codebase — scans it, generates your doc files, flags gaps |
 | `/g2w:build2gether` | Start a new project — brainstorm, research, and locked plan in one conversation |
 | `/g2w:back2it` | Pick up right where you left off |
@@ -121,6 +159,8 @@ npm install -g g2w
 ```
 
 That's it. G2W copies its skills and hooks directly into your Claude Code setup. Open a new project, type a command, and you're in.
+
+> **Tip:** The logo renders in **bright green** in any terminal. On Windows Terminal or iTerm2, enable Retro/Bloom effects for the full glow.
 
 ---
 
@@ -144,4 +184,6 @@ Speed comes from simplicity. Control comes from clarity. If you need a system to
 
 Under active development. First real-world test case is Blackhole VST running through `/g2w:bring2life`.
 
-*Built by ONLY1BTAYY*
+---
+
+*Built by ONLY1BTAYY · MIT License · Claude Code native*

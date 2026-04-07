@@ -261,3 +261,5 @@ Research is invisible. Planning is instant. Trust is the result.
 10. A-Game Hook added: fires before every edit/bug fix, forces think-first check on ripple effects — hook-delivered, not optional
 11. `/g2w:build2gether` bundles discuss + plan + research into one flow — talk once, plan locks, execute. Never repeat yourself.
 12. Brainstorm = the conversation itself. Research = silent background agents. Plan = what comes out the other end.
+13. Post-plan prompt style: conversational tone (B) + command visible — "Plan's locked — ready to build? (`/g2w:get2work`)" — works mid-session AND as fresh-session entry point.
+14. Context warning feature: `PostMessage` hook monitors context usage — at 80%, Claude says: "Hey, we're getting close to the compact limit — we should save everything and clear context so you can save usage. Want me to run `/g2w:ready2save`?" Manual early save available anytime via `/g2w:ready2save`.
