@@ -1,35 +1,21 @@
 ## Last Completed
-Architecture session — runtime/source separation + centralized doc storage decisions (2026-04-07)
+Skills updated — runtime/source separation fully wired (2026-04-07)
 
 **What was done:**
-- Dynamic npm badge — auto-updates on every publish, no manual edits
-- Removed `g2w install` step — postinstall handles everything automatically
-- Fixed correct Gemini ASCII logo — saved permanently in `G2W-ASSETS.md` and `lib/logo.js`
-- Added green ASCII logo to `g2w` CLI output and install confirmation
-- Fought npm output suppression across 8 versions — final solution: `npm install -g @only1btayy/g2w && g2w`
-- Added uninstall — `npm uninstall -g @only1btayy/g2w` cleans up `~/.claude/` automatically via `preuninstall` hook
-- README updated — `&& g2w` install command, uninstall section, dynamic badge
-- Tightened definition of done in `build2gether` skill — must be tied to user's actual environment
-- Confirmed all 7 spec problems (from G2W-SPEC.md) are covered in skills
-- `pics/` folder cleaned up from repo
-
-**Key decisions:**
-- npm `foreground-scripts=false` by default suppresses ALL lifecycle output — no way around it. Solution: chain `&& g2w` so the logo shows right after install in the same terminal session
-- ASCII logo saved to `G2W-ASSETS.md` so it survives context clears — never lose it again
-- Uninstall wired via `preuninstall` npm lifecycle hook — one command removes everything cleanly
-- Definition of done must be environment-specific: "what build, what to open, what to click, what you'll see" — not "it compiled"
+- `~/.g2w/` runtime created with `projects/` subfolder and active project tracking
+- `bring2life` — writes to `~/.g2w/projects/[name]/`, sets active project, adds PLAN.md as 11th doc
+- `back2it` — reads `~/.g2w/CURRENT.md` first, project picker if no active project
+- `ready2save` — reads/writes to `~/.g2w/` runtime root
+- `get2work` — full existing codebase Foundation flow built in
+- All 4 skills synced to `projects/g2w/skills/` (npm source) and pushed
 
 ## In Progress
-Updating all G2W skills to use `~/.g2w/` as runtime root + centralized doc storage
+(none)
 
 ## Next
-- [ ] Update `~/.g2w/CURRENT.md` — add active project tracking structure
-- [ ] Update `bring2life` skill — write to `~/.g2w/projects/[name]/`, set active project, add PLAN.md as 11th doc
-- [ ] Update `back2it` skill — read from `~/.g2w/` runtime root, project picker if no active project set
-- [ ] Update `ready2save` skill — write to `~/.g2w/` runtime root
-- [ ] Update `get2work` skill — existing codebase Foundation flow (Challenger → Inspector → Visionary → Builder)
-- [ ] Build The Foundation skills using `superpowers:writing-skills`
-- [ ] Once Foundation built: run Blackhole VST through it as first real test
+- [ ] Build The Foundation skills using `superpowers:writing-skills` — baseline test BEFORE writing each skill
+- [ ] Run Blackhole VST through `bring2life` → `get2work` as first real test
+- [ ] Trust Layer hook fix: add verify rule to existing PreToolUse hook in settings.json (edit existing hook, don't create new one)
 
 ## The Foundation — What It Is
 Five agents. One mission: get it right the first time.
