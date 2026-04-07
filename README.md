@@ -32,11 +32,21 @@ The problem was never intelligence. The problem was process.
 
 ## How It Works
 
+---
+
+### The Modular Doc System
+
+Every project gets a full set of living documents — `ARCHITECTURE.md`, `CONVENTIONS.md`, `ERRORS.md`, `CHANGELOG.md`, and more. The rule is simple: when you change code that any doc describes, update that doc in the same session. No separate documentation pass. No stale docs. The knowledge base stays current automatically.
+
+---
+
 ### Talk Once. Plan Once. Build.
 
 You start a conversation. You describe your vision. G2W listens, asks smart questions, and runs research silently in the background — tech stack, existing solutions, the ecosystem. By the time you're done talking, the plan is already written and locked.
 
 No separate phases. No repeating yourself. Just a conversation that ends with something ready to build.
+
+---
 
 ### The Foundation
 
@@ -52,6 +62,8 @@ Once the plan locks, The Foundation takes over. Five roles. One mission. Get it 
 
 The plan is the contract. By the time The Builder touches a single line of code, every decision has already been made.
 
+---
+
 ### The Trust Layer
 
 Delivered via hook so it runs every single session, not just when the AI remembers.
@@ -63,6 +75,8 @@ Delivered via hook so it runs every single session, not just when the AI remembe
 - "I don't know" instead of guessing — always.
 - Uncertainty is labeled, not hidden. `[Inference]` and `[Unverified]` are used so you always know what's confirmed and what isn't.
 - If scope creeps, it stops and flags it before touching anything.
+
+---
 
 ### The A-Game Hook
 
