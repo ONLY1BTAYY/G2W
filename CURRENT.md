@@ -1,32 +1,27 @@
 ## Last Completed
-G2W README overhaul (2026-04-07) — Full visual upgrade complete.
+G2W npm install mechanism built (2026-04-07) — CLI + install/update/uninstall logic complete.
 
-**What was done this session:**
-- ASCII logo locked — 3D shadow style, bright green, heredoc-safe shell code from Gemini
-- Logo PNG (terminal screenshot) added to `assets/logo.png`, embedded in README at 600px width
-- Badges added: npm, license, platform, status (static for now — swap when npm package is live)
-- Terminal install demo block added
-- Navigation anchor links added
-- "How 2 Install" glow tip added (Windows Terminal / iTerm2 bloom note)
-- MIT LICENSE file created
-- CONTRIBUTING.md and SECURITY.md created then removed — not needed pre-launch
-- `pics/` folder still in repo — clean up later
+**What was done:**
+- All 9 skill files written to `skills/` (source of truth for npm package)
+- `package.json` created — name `g2w`, bin `./bin/g2w.js`, files: bin/ lib/ skills/
+- `bin/g2w.js` — CLI entrypoint: install / update / uninstall / help
+- `lib/install.js` — copy skills, merge hooks, prompt for global vs local
+- README How 2 Install section updated to reflect `g2w install` flow
+- `.claude/settings.json` created with Trust Layer + A-Game + context warning hooks
 
 **Key decisions:**
-- PNG over SVG — Brian screenshots his terminal, keeps it real
-- Static badges until npm package is published
-- No testimonials yet — add when real quotes exist
-- Claude Code dominant note locked into "Who It's For"
-- Logo renders bright green in any terminal; bloom/glow requires Windows Terminal or iTerm2
+- No postinstall — user runs `g2w install` explicitly after `npm install -g g2w`
+- Why: postinstall can't safely resolve local project path during global npm install
+- Global = `~/.claude/`, Local = `process.cwd()/.claude/`
+- Hooks merge safely — won't duplicate if already present
+- `ready2rock` removed — npm replaces it as the install mechanism
 
 ## In Progress
-Nothing — session wrapped clean.
+(none)
 
 ## Next
-- Build skill files: `build2gether`, `bring2life`, `get2work` first
-- Expand Trust Layer hook with full Reality Filter rules
-- Add sharper Challenger questions to Foundation pipeline docs
-- Run Blackhole through `/g2w:bring2life` as first real test case
-- Clean up `pics/` folder from repo
-- Swap static badges for dynamic npm badges when package is published
-- Type `G2W` at the start of a new conversation to resume
+- [ ] Publish to npm (`npm publish`)
+- [ ] Run `/g2w:bring2life` on Blackhole VST as first real test case (proof of concept)
+- [ ] Clean up `pics/` folder from repo
+- [ ] Swap static badges for dynamic npm badges after publish
+- [ ] Add G2W-SESSION.md entry for today's decisions

@@ -27,12 +27,15 @@ This is not a workflow system. Not a task runner. This is a protocol for buildin
 npm install -g g2w
 ```
 
+```bash
+g2w install
 ```
-✓ Installing G2W
-✓ Installing skills  →  ~/.claude/skills/
-✓ Installing hooks   →  ~/.claude/hooks/
 
-Done. Run /g2w:build2gether to start.
+```
+  1. Global  ~/.claude/     available in all projects
+  2. Local   ./.claude/     this project only
+
+✅ G2W installed — 9 skills + hooks ready.
 ```
 
 **Works on Mac, Windows, and Linux.**
@@ -152,7 +155,20 @@ Safe git operations — add, commit, push, status, log — run without approval 
 npm install -g g2w
 ```
 
-That's it. G2W copies its skills and hooks directly into your Claude Code setup. Open a new project, type a command, and you're in.
+Then `cd` into your project and run:
+
+```bash
+g2w install
+```
+
+You'll be asked:
+
+```
+  1. Global  ~/.claude/     available in all projects
+  2. Local   ./.claude/     this project only
+```
+
+Pick 1 to set it and forget it. Pick 2 if you want G2W in just one project.
 
 > **Tip:** The logo renders in **bright green** in any terminal. On Windows Terminal or iTerm2, enable Retro/Bloom effects for the full glow.
 
