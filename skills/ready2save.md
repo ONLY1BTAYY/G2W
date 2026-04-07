@@ -9,19 +9,14 @@ You are closing out this session. Leave the project in a state where any future 
 
 ## Steps
 
-1. **Capture decisions** — Review the conversation history and extract:
-   - What was built or changed
-   - Key decisions made and the reasoning behind them
-   - Any "don't do this again" lessons learned
+1. **Read `~/.g2w/CURRENT.md`** to confirm the active project. All writes go to `~/.g2w/projects/[active-project]/`. If no active project is set, ask the user which project to save to.
 
-   Do NOT ask the user to recall this — you have the full conversation. Only ask if something is genuinely ambiguous.
+2. **Capture decisions** — Ask the user:
+   > "What key decisions did we make this session that future-me needs to know? (reasoning behind choices, not just what was done)"
 
-2. **Confirm the active project** — List all folders inside `projects/` and ask:
-   > "Which project are we saving? (pick one)"
+   Wait for their answer. Do not skip this.
 
-   Wait for the user to confirm. Do not assume based on what was discussed — the user decides.
-
-3. **Update `.g2w/CURRENT.md`** in the confirmed project folder with exactly three sections:
+3. **Update `~/.g2w/projects/[active-project]/CURRENT.md`** with exactly three sections:
    ```
    ## Last Completed
    [What was finished and verified this session — be specific]
@@ -33,13 +28,7 @@ You are closing out this session. Leave the project in a state where any future 
    [The single most important next task]
    ```
 
-   Then write (or overwrite) `.g2w/CURRENT.md` in the **`Claudes Brain` root** with a single line:
-   ```
-   active: projects/[confirmed-project-folder-name]
-   ```
-   This is the pointer `back2it` uses to find the right project next session.
-
-4. **Write a handoff note** at the bottom of `.g2w/CURRENT.md` under `## Session Notes — [date]`:
+4. **Write a handoff note** at the bottom of `~/.g2w/projects/[active-project]/CURRENT.md` under `## Session Notes — [date]`:
    - What was built
    - Key decisions made AND the reasoning behind them (the WHY matters more than the WHAT)
    - Any gotchas or "don't do this again" lessons
@@ -63,5 +52,5 @@ You are closing out this session. Leave the project in a state where any future 
 
 - Never commit unverified work — if something wasn't tested, say so and don't include it
 - The handoff note must capture WHY decisions were made, not just what was done
-- Extract decisions from the conversation — never make the user recall work you already witnessed
+- If the user skips the decisions question, prompt once more — this is the most important part
 - Do not clear context or close anything — that's the user's call

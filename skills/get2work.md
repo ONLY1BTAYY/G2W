@@ -5,14 +5,55 @@ description: Execute the locked plan — declare scope, build exactly what was p
 
 # /g2w:get2work
 
-You are executing a locked plan. Build exactly what it says. Nothing extra. Nothing "improved."
+You are executing a G2W task. Read `~/.g2w/CURRENT.md` first to confirm the active project. All docs are at `~/.g2w/projects/[active-project]/`.
 
-## Steps
+## Detect: New Project or Existing Codebase?
 
-1. **Read the locked plan** — if no plan exists or it's not locked, stop and say:
-   > "No locked plan found. Run `/g2w:build2gether` first."
+**If `PLAN.md` exists and is locked** → skip to Execution Mode below.
 
-2. **Read `.g2w/CONVENTIONS.md`** — know the rules before touching code.
+**If `PLAN.md` is empty** → check if this is an existing codebase:
+- Does `~/.g2w/projects/[active-project]/` have docs already? → **Existing codebase flow**
+- No docs yet? → Tell user to run `/g2w:bring2life` first, then come back.
+
+---
+
+## Existing Codebase Flow (Challenger → Inspector → Visionary → Builder)
+
+The Foundation goes in as auditors first. Do not plan or build anything yet.
+
+**Step 1 — The Challenger audits:**
+- Read `ARCHITECTURE.md`, `FEATURES.md`, `ERRORS.md` from `~/.g2w/projects/[active-project]/`
+- Adversarially review the codebase: What is fragile? What assumptions are wrong? What will break under load or edge cases? What does the architecture get wrong?
+- Output a numbered list of every finding. Be ruthless — your job is to find problems before the code does.
+
+**Step 2 — The Inspector stress-tests:**
+- Read `TESTING.md` — use the defined test checklist
+- Try to break the project: run it, probe edge cases, trigger known error paths from `ERRORS.md`
+- Add any new failures found to the Challenger's list
+
+**Step 3 — Triage with the user:**
+- Present the combined findings
+- Ask: "Which of these do you want to fix?"
+- If nothing found: say so, confirm the project is healthy, done.
+
+**Step 4 — The Visionary writes the plan:**
+- Write a complete fix plan to `~/.g2w/projects/[active-project]/PLAN.md`
+- Real decisions, no placeholders. Every ambiguity resolved before Builder touches a file.
+- Update `CURRENT.md`: "Active plan: PLAN.md"
+
+**Step 5 — The Leader reviews:**
+- Confirm plan is complete and unambiguous
+- Give the go-ahead to build or flag gaps
+
+**Step 6 — The Builder executes** → continue to Execution Mode below.
+
+---
+
+## Execution Mode (locked plan exists)
+
+1. **Read `~/.g2w/projects/[active-project]/PLAN.md`** — this is the contract.
+
+2. **Read `CONVENTIONS.md`** — know the rules before touching code.
 
 3. **Declare scope** — before writing a single line, output:
    ```
@@ -32,7 +73,8 @@ You are executing a locked plan. Build exactly what it says. Nothing extra. Noth
 5. **Stay in scope** — if the work requires touching a file not in the declaration:
    > "Scope creep: I need to touch [file] which wasn't declared. Stopping. Do you want me to re-declare scope?"
 
-6. **On completion** → automatically run `/g2w:true2plan`
+7. **On completion** → automatically run `/g2w:true2plan`
+   - After Inspector passes: append summary to `CHANGELOG.md`, clear `PLAN.md`
 
 ## Rules
 

@@ -25,13 +25,13 @@ Do not announce what you're reading. Just read.
 
 ## Phase 2 — Generate Draft Docs
 
-Write first-draft versions of all 10 G2W docs based on what you found.
+Write first-draft versions of all 11 G2W docs based on what you found.
 
 For every field you're confident about: fill it in.
 For every field you're uncertain about: write `❓ [UNKNOWN — needs your input]`
 For every field that clearly doesn't apply: write `N/A`
 
-Generate all 10:
+Generate all 11:
 - `CLAUDE.md`
 - `ARCHITECTURE.md`
 - `CONVENTIONS.md`
@@ -42,6 +42,7 @@ Generate all 10:
 - `SCALING.md`
 - `SECURITY.md`
 - `CURRENT.md`
+- `PLAN.md` (leave empty — written by The Visionary when a task begins)
 
 ## Phase 3 — Gap Interview
 
@@ -69,23 +70,33 @@ Fill in the `❓ [UNKNOWN]` gaps based on their answers.
 
 ## Phase 4 — Final Output
 
-Create a `.g2w/` folder in the project root if it doesn't exist. Write all completed doc files there.
+**Determine the project name** from the folder name or package.json name field.
+
+**Write all 11 docs to `~/.g2w/projects/[project-name]/`** — NOT inside the project codebase. Zero footprint on the actual project.
+
+**Update `~/.g2w/CURRENT.md`** to set this project as active:
+```
+## Active Project
+Name: [project-name]
+Path: [absolute path to project root]
+Docs: ~/.g2w/projects/[project-name]/
+```
 
 Output a summary:
 ```
 bring2life complete.
 
-Docs generated: 10
+Project: [project-name]
+Docs written to: ~/.g2w/projects/[project-name]/
+
+Docs generated: 11
 Auto-filled from code: [X fields]
 Filled from your answers: [X fields]
 Still needs input: [list any remaining ❓ items]
 ```
 
 Then:
-> "Your G2W doc system is live. Next time you open this project, start with `/g2w:back2it`."
-
-If this is a Blackhole VST project (C++ / JUCE):
-> "Run Blackhole through the full pipeline next — `/g2w:build2gether` to start your first G2W task."
+> "Your G2W doc system is live. [project-name] is now the active project. Next session, type `/g2w:back2it` to pick up right where we left off."
 
 ## Rules
 
