@@ -108,6 +108,22 @@ The plan is the contract. By the time The Builder touches a single line of code,
 
 ---
 
+### Optional Methods
+
+Each Foundation agent is also a direct slash command. The normal flow runs through `/g2w:build2gether` and `/g2w:get2work` — but if you know what you're doing, you can jump straight into any stage of the pipeline.
+
+| Command | When to use it directly |
+|---|---|
+| `/g2w:the-visionary` | You have a half-written plan and just want it finished — skip the full build2gether flow |
+| `/g2w:the-challenger` | You wrote your own plan outside G2W and want it stress-tested before building |
+| `/g2w:the-builder` | Plan is already locked — skip straight to building |
+| `/g2w:the-inspector` | Code is already written — just verify it against a plan |
+| `/g2w:the-leader` | Kick off the full pipeline without the identity, brainstorm, and research phases |
+
+These are escape hatches for engineers who don't need the ceremony. G2W has no ceiling.
+
+---
+
 ### The Trust Layer
 
 Delivered via hook so it runs every single session, not just when the AI remembers.
