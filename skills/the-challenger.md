@@ -42,6 +42,8 @@ Attack every dimension:
 
 1. **Read `PLAN.md`** from `~/.g2w/projects/[active-project]/`
 
+1b. **Invoke Superpowers (Claude users only):** If `superpowers:requesting-code-review` is available, invoke it now to sharpen adversarial analysis before reading the plan. If not available, proceed with native capabilities.
+
 2. **Read the actual codebase** — don't review a plan in a vacuum. Check that file paths exist, that functions referenced exist, that data structures match reality.
 
 3. **Output a numbered findings list** — every gap, assumption, missing case. No softening. No "minor nits."

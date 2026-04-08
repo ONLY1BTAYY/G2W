@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G2W — Choose Your Identity</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #080808;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    overflow-x: hidden;
+  }
+
+  .noise {
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 56px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .g2w-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: #444;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .header h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  .header h1 span {
+    background: linear-gradient(135deg, #fff 0%, #888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    color: #555;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .project-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #141414;
+    border: 1px solid #222;
+    border-radius: 100px;
+    padding: 8px 16px;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 32px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .project-pill .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #3b82f6;
+    box-shadow: 0 0 8px #3b82f6;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    .cards { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: #0f0f0f;
+    border: 1px solid #1a1a1a;
+    border-radius: 20px;
+    padding: 32px 28px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 20px;
+  }
+
+  .card:hover {
+    transform: translateY(-6px) scale(1.01);
+  }
+
+  .card:hover::before { opacity: 1; }
+
+  /* Card 1 — Growth Engine */
+  .card-1 { --accent: #f97316; --accent2: #fb923c; --glow: rgba(249,115,22,0.15); }
+  .card-1::before { background: radial-gradient(ellipse at 50% 0%, var(--glow) 0%, transparent 70%); }
+  .card-1:hover { border-color: #f97316; box-shadow: 0 0 40px rgba(249,115,22,0.12), 0 20px 60px rgba(0,0,0,0.5); }
+
+  /* Card 2 — Brand Architect */
+  .card-2 { --accent: #a855f7; --accent2: #c084fc; --glow: rgba(168,85,247,0.15); }
+  .card-2::before { background: radial-gradient(ellipse at 50% 0%, var(--glow) 0%, transparent 70%); }
+  .card-2:hover { border-color: #a855f7; box-shadow: 0 0 40px rgba(168,85,247,0.12), 0 20px 60px rgba(0,0,0,0.5); }
+
+  /* Card 3 — Automation Machine */
+  .card-3 { --accent: #06b6d4; --accent2: #22d3ee; --glow: rgba(6,182,212,0.15); }
+  .card-3::before { background: radial-gradient(ellipse at 50% 0%, var(--glow) 0%, transparent 70%); }
+  .card-3:hover { border-color: #06b6d4; box-shadow: 0 0 40px rgba(6,182,212,0.12), 0 20px 60px rgba(0,0,0,0.5); }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  .icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+  }
+
+  .card:hover .icon-wrap {
+    background: rgba(255,255,255,0.06);
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--glow);
+  }
+
+  .card-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #333;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+  }
+
+  .card-name {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .card-name span {
+    color: var(--accent);
+  }
+
+  .card-tagline {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.7;
+    margin-bottom: 16px;
+  }
+
+  .card-desc {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #666;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .vibes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 28px;
+  }
+
+  .vibe {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #555;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+  }
+
+  .card:hover .vibe {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(255,255,255,0.02);
+    opacity: 0.7;
+  }
+
+  .select-btn {
+    width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+    border: 1px solid #222;
+    background: #141414;
+    color: #555;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .select-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .select-btn span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .card:hover .select-btn {
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .card:hover .select-btn::after {
+    opacity: 0.15;
+  }
+
+  .footer {
+    margin-top: 48px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer p {
+    font-size: 12px;
+    color: #333;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  .footer p span {
+    color: #555;
+  }
+
+  /* Selected state */
+  .card.selected {
+    transform: translateY(-6px) scale(1.02);
+    border-color: var(--accent);
+    box-shadow: 0 0 60px var(--glow), 0 20px 60px rgba(0,0,0,0.6);
+  }
+
+  .card.selected .select-btn {
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .card.selected .select-btn::after {
+    opacity: 0.25;
+  }
+
+  .card.selected .vibe {
+    border-color: var(--accent);
+    color: var(--accent);
+    opacity: 0.8;
+  }
+</style>
+</head>
+<body>
+<div class="noise"></div>
+
+<div class="header">
+  <div class="g2w-logo">G2W — build2gether</div>
+  <div class="project-pill">
+    <div class="dot"></div>
+    social media monitor &amp; runner
+  </div>
+  <h1>Who's building this<br><span>with you?</span></h1>
+  <p class="subtitle">Pick the identity that fits how you want to work.</p>
+</div>
+
+<div class="cards">
+
+  <!-- Card 1 -->
+  <div class="card card-1" onclick="select(this)">
+    <div class="card-top">
+      <div class="icon-wrap">📈</div>
+      <div class="card-number">01</div>
+    </div>
+    <div class="card-tagline">Data-First</div>
+    <div class="card-name">The <span>Growth</span> Engine</div>
+    <div class="card-desc">"I think in metrics. Impressions, reach, engagement rate, follower velocity — these aren't vanity numbers, they're signals. I'll build a system that knows what's working before you do."</div>
+    <div class="vibes">
+      <div class="vibe">Analytics</div>
+      <div class="vibe">Velocity</div>
+      <div class="vibe">ROI</div>
+      <div class="vibe">Data-driven</div>
+    </div>
+    <button class="select-btn"><span>Choose this identity →</span></button>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card card-2" onclick="select(this)">
+    <div class="card-top">
+      <div class="icon-wrap">💎</div>
+      <div class="card-number">02</div>
+    </div>
+    <div class="card-tagline">Long Game</div>
+    <div class="card-name">The Brand <span>Architect</span></div>
+    <div class="card-desc">"Every post is a brick. I care about consistency, voice, and the long game. I'll build a system that protects your brand across every platform — so everything feels like you, every time."</div>
+    <div class="vibes">
+      <div class="vibe">Brand</div>
+      <div class="vibe">Voice</div>
+      <div class="vibe">Consistency</div>
+      <div class="vibe">Identity</div>
+    </div>
+    <button class="select-btn"><span>Choose this identity →</span></button>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card card-3" onclick="select(this)">
+    <div class="card-top">
+      <div class="icon-wrap">⚡</div>
+      <div class="card-number">03</div>
+    </div>
+    <div class="card-tagline">Zero Manual Work</div>
+    <div class="card-name">The Automation <span>Machine</span></div>
+    <div class="card-desc">"Manual posting is dead. I'll wire everything together — schedule, publish, monitor, alert — so your social media runs itself while you focus on what actually matters."</div>
+    <div class="vibes">
+      <div class="vibe">Automation</div>
+      <div class="vibe">Pipelines</div>
+      <div class="vibe">Efficiency</div>
+      <div class="vibe">Zero-touch</div>
+    </div>
+    <button class="select-btn"><span>Choose this identity →</span></button>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>or type your own → <span>describe the kind of builder you want</span></p>
+</div>
+
+<script>
+  function select(card) {
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    card.querySelector('.select-btn span').textContent = '✓ Identity locked';
+    setTimeout(() => {
+      document.querySelector('.header h1').innerHTML = 'Identity locked.<br><span>Let\'s build.</span>';
+      document.querySelector('.subtitle').textContent = 'Starting your session...';
+    }, 400);
+  }
+</script>
+</body>
+</html>

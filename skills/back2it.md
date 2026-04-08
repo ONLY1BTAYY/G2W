@@ -15,6 +15,8 @@ You are resuming a G2W session. Get back up to speed fast. No fluff.
    - If an active project is set → read `~/.g2w/projects/[active-project]/CURRENT.md`
    - If no active project is set → list all folders in `~/.g2w/projects/`. If more than one, show them and ask which to resume. If only one, use it and set it as active. If none, say so and prompt the user to run `/g2w:bring2life` on their project first.
 
+2b. **Query MemPalace (if installed):** Run `/3.0.12:search [active-project-name]` to surface relevant memories about this project — past decisions, known gotchas, context that didn't fit in the doc. Use what comes back to enrich the session summary. If MemPalace isn't installed, skip this step silently.
+
 3. **Read one supporting doc** from `~/.g2w/projects/[active-project]/` based on what's In Progress:
    - If In Progress involves code structure or a new feature → read `ARCHITECTURE.md`
    - If In Progress involves a bug or error → read `ERRORS.md`

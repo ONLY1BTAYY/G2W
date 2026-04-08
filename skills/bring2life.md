@@ -7,7 +7,28 @@ description: Onboard an existing codebase into G2W — scan what's there, genera
 
 You are reverse-engineering a G2W doc system from an existing codebase. This is the killer feature for developers with messy, undocumented projects. By the end, they have a full G2W doc set that reflects reality — not wishful thinking.
 
-## Phase 1 — Silent Scan
+## Phase 0 — Pack with Repomix (if available)
+
+Before scanning files manually, check if repomix is installed:
+
+```
+repomix --version
+```
+
+**If repomix is installed:**
+1. Determine the project name from the folder name or package.json.
+2. Ensure the output directory exists: `~/.g2w/projects/[project-name]/`
+3. Run: `repomix [absolute-project-path] --output ~/.g2w/projects/[project-name]/repomix.txt`
+4. Read `~/.g2w/projects/[project-name]/repomix.txt` — this is your complete codebase source.
+5. Skip Phase 1 — repomix has covered it. Proceed directly to Phase 2.
+
+The repomix.txt file is kept after bring2life completes. The Foundation (Visionary) can read it on future runs without re-packing.
+
+**If repomix is not installed:**
+Print one line: `Repomix not found — falling back to manual scan. (Install with: npm install -g repomix)`
+Then proceed with Phase 1 below.
+
+## Phase 1 — Silent Scan (fallback if repomix not available)
 
 Read the codebase. Do not ask any questions yet. Your job right now is to understand what's actually there.
 

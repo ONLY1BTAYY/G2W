@@ -37,6 +37,8 @@ Every decision made. Nothing left to the Builder's judgment:
 
 2. **Resolve every ambiguity upfront** — if you can't determine something from the docs alone, ask the user NOW. Do not leave it as a question in the plan.
 
+2b. **Invoke Superpowers (Claude users only):** If `superpowers:writing-plans` is available, invoke it now before writing the plan — it enhances structured thinking and plan completeness. If not available, proceed with native capabilities.
+
 3. **Write the plan to `~/.g2w/projects/[active-project]/PLAN.md`**:
    - Task in one sentence
    - Files to create (with full paths)

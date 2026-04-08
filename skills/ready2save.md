@@ -34,6 +34,8 @@ You are closing out this session. Leave the project in a state where any future 
    - Any gotchas or "don't do this again" lessons
    - What to read first next session
 
+4b. **Mine into MemPalace (if installed):** Run `/3.0.12:mine` on `~/.g2w/projects/[active-project]/CURRENT.md` to index this session's decisions into MemPalace. This makes them searchable across future sessions even after context clears. If MemPalace isn't installed, skip this step silently.
+
 5. **Commit** everything that was verified this session:
    ```
    type: short summary
