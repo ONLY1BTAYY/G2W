@@ -25,6 +25,35 @@ Trust Layer upgraded to guardrail-tier + Foundation skills built + hooks ship on
 ## In Progress
 (none)
 
+## Session Notes — 2026-04-07 (hooks audit + README gap close)
+
+**What was done:**
+
+Three gaps closed in `~/.claude/settings.json` — all verified by reading the file back after each edit.
+
+**1. Verify rule added to Trust Layer prompt hook (`Edit|Write|Bash` matcher)**
+- Rule added: "After every Write or Edit, read the file back immediately and confirm the content is correct before declaring it done. Never say 'done' without proof."
+- Why: Last session identified this as a missing enforcement — saves were being declared done without proof.
+
+**2. Context warning hook fixed and threshold corrected**
+- `PostMessage` is not a valid Claude Code hook event — was silently doing nothing every session since it was written.
+- Replaced with `UserPromptSubmit` — fires on every message Brian sends, injects reminder into main model's context so Claude self-monitors.
+- Threshold changed from "80% used" to "30% used (70% remaining)" — much earlier warning so there's time to save cleanly.
+- Message: "Hey — we've hit 30% context used. Want me to run /g2w:ready2save to save progress and clear context?"
+
+**3. [Inference] / [Unverified] labels added to Trust Layer prompt**
+- README claimed these labels were enforced. They were not in the actual hook.
+- Added: "Label uncertain claims — use [Inference] when reasoning from incomplete data and [Unverified] when stating something not yet confirmed."
+- README claim is now backed by actual enforcement.
+
+**4. build2gether skill verified**
+- README claims "research silently in background" — confirmed Phase 1 of the skill does exactly this. No gap.
+
+**Key decisions & WHY:**
+- `UserPromptSubmit` over `Stop` for context warning — fires before Claude processes each turn so warning can influence the response.
+- 30% used (not 30% remaining) — Brian's intent: early warning with plenty of context left to run ready2save cleanly.
+- No new hooks created — all changes merged into existing hooks per standing rule.
+
 ## Next
 - [ ] Run Blackhole VST through `bring2life` → `get2work` as first real test of The Foundation
 - [ ] npm publish once Blackhole test passes (The Foundation is now complete)
