@@ -71,6 +71,25 @@ You start a conversation. You describe your vision. G2W listens, asks smart ques
 
 No separate phases. No repeating yourself. Just a conversation that ends with something ready to build.
 
+Research isn't just a web search. G2W uses Context7 for live library docs, Exa for semantic search across similar projects, Firecrawl to crawl repos and docs sites, and Repomix to pack reference codebases so The Visionary can read how a production-quality version of what you're building actually works. Everything saves to `RESEARCH.md` and persists — future sessions don't re-run research from scratch.
+
+---
+
+### Power-Ups
+
+G2W works out of the box. These optional tools make it stronger:
+
+| Tool | What It Adds |
+|---|---|
+| [Repomix](https://github.com/yamadashy/repomix) | Packs entire codebases into one AI-optimized file — `bring2life` and research use this |
+| [Context7](https://context7.com) | Live library docs pulled into research — no stale training data |
+| [Exa](https://exa.ai) | Semantic search for similar projects and best practices |
+| [Firecrawl](https://firecrawl.dev) | Deep crawling of repos and docs sites during research |
+| [MemPalace](https://github.com/milla-jovovich/mempalace) | Persistent memory across sessions — decisions survive context clears |
+| [Superpowers](https://github.com/supermemoryai/superpowers-claude) | Enhanced planning and review capabilities for Claude users |
+
+Install what you want. G2W uses what's available and falls back gracefully when something isn't there.
+
 ---
 
 ### The Foundation

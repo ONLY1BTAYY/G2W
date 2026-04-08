@@ -28,6 +28,40 @@ The repomix.txt file is kept after bring2life completes. The Foundation (Visiona
 Print one line: `Repomix not found — falling back to manual scan. (Install with: npm install -g repomix)`
 Then proceed with Phase 1 below.
 
+## Phase 0b — Research (run in background while scanning)
+
+While generating docs, spin background research agents to understand the ecosystem this project lives in. Save findings to `~/.g2w/projects/[project-name]/RESEARCH.md`.
+
+Use every available tool:
+- **Context7** (`mcp__context7__*`) — pull live docs for the frameworks and libraries detected in the codebase
+- **Exa** (`mcp__exa__*`) — find similar projects, best practices, known pitfalls for this tech stack
+- **Firecrawl** (`mcp__firecrawl__*`) — crawl the project's own docs site if one exists, plus relevant framework docs
+- **Repomix on reference repos** — find a well-built similar project, clone it, run repomix on it, read the output to understand how a production version is structured
+- **WebSearch / WebFetch** — base fallback
+
+```
+# Research — [project-name]
+Generated: [date]
+
+## Ecosystem Overview
+[What exists, what's standard in this space]
+
+## Reference Projects
+[Similar repos studied + key architectural takeaways]
+
+## Library Docs
+[Key APIs and current versions from Context7]
+
+## Best Practices
+[What the field agrees on for this type of project]
+
+## Risks & Pitfalls
+[Common failure modes for this stack]
+
+## Technology Decisions
+[Why this stack — what alternatives exist and why this was chosen]
+```
+
 ## Phase 1 — Silent Scan (fallback if repomix not available)
 
 Read the codebase. Do not ask any questions yet. Your job right now is to understand what's actually there.

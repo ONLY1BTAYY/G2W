@@ -48,6 +48,7 @@ Every G2W project gets this set of files:
 | `SCALING.md` | Distribution, platform, infrastructure decisions | When thinking about growth |
 | `SECURITY.md` | Sensitive systems, auth, license, API keys | When touching anything sensitive |
 | `CURRENT.md` | Last completed / in progress / what's next | Every new session |
+| `RESEARCH.md` | Ecosystem research, reference repos studied, technology decisions and why | Before any new feature or project |
 
 **The self-maintenance rule:** When you change code that any doc describes, update that doc in the same session. Not later. Right now. Docs maintain themselves.
 

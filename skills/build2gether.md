@@ -36,11 +36,21 @@ Wait for their choice. Once they pick:
 
 ---
 
-## Phase 0b — Requirements Clarification
+## Phase 0b — Brainstorm (optional)
 
-Ask the user these questions **conversationally** — not as a numbered list all at once. Ask 1-2 at a time, listen, follow up. This IS the brainstorm.
+After identity is locked, ask one question:
+> "Do you have a clear picture of what you want, or do you want to think it through first?"
 
-Core questions to cover:
+**If they need to brainstorm:** Give them space. Let them think out loud, explore directions, change their mind. Ask open questions. No structure yet — just listen and help them get to clarity. Stay in this phase until they have a clear vision.
+
+**If they already know what they want:** Skip this phase entirely. Go straight to Phase 0c.
+
+---
+
+## Phase 0c — Requirements Clarification
+
+Ask these questions **conversationally** — 1-2 at a time, listen, follow up.
+
 - What does "done" look like? What's the first thing you'll do to test it?
 - What are the hard constraints? (platform, tech stack, deadlines, budget)
 - What could go wrong? Walk me through the failure cases you're already worried about.
@@ -51,12 +61,43 @@ Do not move to planning until you can answer all of these confidently. If an ans
 
 ## Phase 1 — Silent Research (while talking)
 
-While the conversation is happening, spin background research agents for:
-- Existing solutions or libraries that solve part of this problem
-- Known pitfalls or edge cases in this tech area
-- Relevant patterns from the project's existing codebase (if any)
+While the conversation is happening, spin background research agents. Research is invisible — the user never feels it. Use every available tool:
 
-Research is invisible to the user. It informs the plan — the user never feels it.
+**Context7** (`mcp__context7__*`) — pull live library docs for the stack they're using. Don't rely on training data for framework APIs — fetch the current docs.
+
+**Exa** (`mcp__exa__*`) — semantic search for similar projects, best practices, and known pitfalls in this tech area. Find how others have solved this problem.
+
+**Firecrawl** (`mcp__firecrawl__*`) — crawl relevant docs sites and GitHub repos deeply. Pull examples, patterns, and gotchas.
+
+**Repomix on reference repos** — find a well-built similar project (from Exa results), clone it, run `repomix [path]`, read the packed output. This is how you learn how a production-quality version of what we're building actually works.
+
+**WebSearch / WebFetch** — base fallback if the above aren't installed.
+
+**Save all findings to `~/.g2w/projects/[project-name]/RESEARCH.md`:**
+```
+# Research — [project-name]
+Generated: [date]
+
+## Ecosystem Overview
+[What exists, what's standard, what to avoid]
+
+## Reference Projects
+[Repos studied via Repomix + key takeaways]
+
+## Library Docs
+[Key APIs, current versions, gotchas from Context7]
+
+## Best Practices
+[What the field agrees on for this type of build]
+
+## Risks & Pitfalls
+[What commonly goes wrong, what we're watching for]
+
+## Technology Decisions
+[What we're using and why — not just what, the WHY]
+```
+
+Research saves to RESEARCH.md and persists. Future sessions can read it without re-running research.
 
 ## Phase 2 — Planning
 
