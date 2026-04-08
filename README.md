@@ -215,4 +215,11 @@ Under active development. First real-world test case is Blackhole VST running th
 
 ---
 
+## Acknowledgements
+
+- **[johnkf5-ops/the-dev-squad](https://github.com/johnkf5-ops/the-dev-squad)** — inspired The Foundation's multi-agent pipeline
+- **John Knopf** — modular doc system approach. His words: *"Take it, run with it, use it, modify it, make it better. That's the whole point."*
+
+---
+
 *Built by ONLY1BTAYY · MIT License · Claude Code native*
