@@ -35,7 +35,19 @@ You are resuming a G2W session. Get back up to speed fast. No fluff.
    Blockers: [any known issues, or "none"]
    ```
 
-6. Ask: "Ready to pick up where we left off?"
+6. **Streak check:** Read `~/.g2w/streak.json` (Windows: `C:/Users/[username]/.g2w/streak.json`). If it exists, check the `lastDate` and `count` fields:
+   - If `lastDate` was yesterday, increment `count` by 1 and update `lastDate` to today. Write the file back.
+   - If `lastDate` is today, don't change anything.
+   - If `lastDate` is older than yesterday, reset `count` to 1 and set `lastDate` to today. Write the file back.
+   - If the file doesn't exist, create it with `{ "lastDate": "[today]", "count": 1 }`.
+
+   Display the streak only if count >= 2, using this tone (calm, professional, encouraging):
+   - 2-3 days: "{count} days in a row, {first name}. Consistency compounds."
+   - 4-7 days: "{count}-day streak. This is how things get built, {first name}."
+   - 8-14 days: "{count} days straight. Most people quit by now. You didn't."
+   - 15+ days: "{count}-day streak. At this point, it's not discipline — it's who you are."
+
+7. Ask: "Ready to pick up where we left off?"
 
 ## Rules
 

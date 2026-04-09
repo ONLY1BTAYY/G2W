@@ -1,5 +1,74 @@
 ## Last Completed
-Trust Layer upgraded to guardrail-tier + Foundation skills built + hooks ship on install (2026-04-07)
+Bug fixes, auto-install design tools, code audit pipeline, CLI commands (2026-04-08)
+
+**What was done this session (1.0.24 → 1.0.27):**
+
+**Bug fixes:**
+- `ready2save` — no longer asks user what was done. Extracts everything from conversation history automatically.
+- Trust Layer hook matcher — changed from `Edit|Write|Bash` to `Edit|Write`. Was blocking git commits even after user approved them. Fixed in both settings.json and install.js so new installs don't have this bug.
+- Fixed broken MemPalace reference in ready2save (`/3.0.12:mine` → `/mempalace:mine`)
+- Synced both copies of ready2save (skills/ and .claude/skills/g2w/)
+
+**Automatic code audit pipeline:**
+- `bring2life` Phase 2b — auto-audits codebase during onboarding, writes ERRORS.md with bugs, dead code, anti-patterns, security issues. File paths, line numbers, specific descriptions.
+- `The Leader` Phase 1b — triggers code audit before Challenger reviews. Skips if ERRORS.md exists and is <7 days old.
+- `The Challenger` — now reads ERRORS.md as context. Flags plans that ignore known issues.
+- `The Inspector` — updates ERRORS.md after verification. Marks resolved issues, adds new findings.
+- README Optional Methods updated to show Leader can trigger code audits.
+
+**Auto-install design tools (4 free MCP servers):**
+- Context7 — live library docs (research + planning)
+- Shadcn/UI MCP — real React component implementations
+- Tailwind CSS MCP — utility classes, CSS conversion
+- A11y MCP — accessibility audits, WCAG compliance
+- All auto-install during `g2w` setup. No API keys needed.
+
+**Power-Ups system:**
+- Install output now shows included tools + Power-Ups with signup links
+- Added to Power-Ups: 21st.dev, Motion, Figma MCP, Marketing Skills, Exa, Firecrawl, Repomix, MemPalace, Superpowers
+- `g2w power-ups` CLI command — shows all optional tools with links
+- `g2w update` — now syncs skills, hooks, AND MCP servers
+- Clean uninstall removes MCP servers along with hooks and skills
+- README split into "What Ships With G2W" and "Power-Ups" sections
+
+**Key decisions & WHY:**
+- Auto-install only free, no-key tools — trust means not silently installing things that need API keys or cost money
+- Code audit is automatic, never optional — users always want to know the health of their code, they just shouldn't have to ask
+- Trust Layer removed from Bash matcher — the prompt was telling Claude "no commits without approval" even after approval was given. Root cause of the commit-blocking bug.
+- Marketing Skills added as Power-Up not auto-install — not every project needs marketing, but it's there for product builders
+
+## In Progress
+(none)
+
+## Next
+- [ ] Build identity card system into `build2gether` skill (browser UI + skill update)
+- [ ] Wire Superpowers into The Foundation for Claude users
+- [ ] Wire MemPalace into `back2it` and `ready2save`
+- [ ] Run Blackhole VST through `bring2life` → `get2work` as first real test of The Foundation
+- [ ] Build `g2w power-ups` interactive setup (walk user through key entry for each tool)
+
+## Session Notes — 2026-04-08 (bug fixes + design tools + code audit)
+
+**What was built:** See "Last Completed" above — all shipped in versions 1.0.24 through 1.0.27.
+
+**Key decisions & WHY:**
+- Context7 auto-installs because it's the most-used tool (GSD and G2W both reach for it first) and it's completely free with no key.
+- Shadcn/UI, Tailwind, A11y auto-install because most G2W users are building things with UIs — even VST builders need these.
+- 21st.dev and Motion are Power-Ups because they need free API keys — user has to take an action.
+- Code audit baked into The Leader's pipeline (not a separate command) so it happens automatically in the normal flow.
+- `g2w update` now syncs everything (not just skills) because MCP servers and hooks can change between versions too.
+
+**What to read first next session:**
+- This file
+- `lib/install.js` — the MCP server config and power-ups output
+- `skills/bring2life.md` — Phase 2b code audit
+- `skills/the-leader.md` — Phase 1b code audit trigger
+
+---
+
+## Previous Sessions
+
+### Trust Layer / A-Game sprint (2026-04-07)
 
 **What was done — Trust Layer / A-Game sprint:**
 - `~/.claude/hooks/g2w-scope-guard.js` — new PreToolUse command hook. Reads `## Scope` block from `~/.g2w/CURRENT.md`, returns exit code 1 (hard stop) if file being edited is not in declared scope. Warns loudly (not silently passes) if CURRENT.md exists but has no Scope block.
