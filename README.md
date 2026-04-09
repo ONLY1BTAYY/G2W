@@ -75,20 +75,50 @@ Research isn't just a web search. G2W uses Context7 for live library docs, Exa f
 
 ---
 
+### What Ships With G2W
+
+These install automatically — no setup, no API keys, no extra steps:
+
+| Tool | What It Does |
+|---|---|
+| [Context7](https://context7.com) | Live library docs in every research and planning phase — no stale training data |
+| [Shadcn/UI MCP](https://www.shadcn.io/mcp) | Real React component implementations with TypeScript props |
+| [Tailwind CSS MCP](https://github.com/CarbonoDev/tailwindcss-mcp-server) | Utility classes, color palettes, CSS-to-Tailwind conversion |
+| [A11y MCP](https://github.com/priyankark/a11y-mcp) | Accessibility audits and WCAG compliance checks |
+
+Claude reaches for these automatically when they're relevant. You don't have to call them.
+
+---
+
 ### Power-Ups
 
-G2W works out of the box. These optional tools make it stronger:
+Optional tools that make G2W stronger. Run `g2w power-ups` to set these up anytime.
+
+**Free (just needs a key):**
+
+| Tool | What It Adds | Get Your Key |
+|---|---|---|
+| [21st.dev](https://21st.dev) | AI-powered UI component generation — like v0 in your IDE | [21st.dev/magic/console](https://21st.dev/magic/console) |
+| [Motion](https://motion.dev) | Production-grade animations with AI Kit | [plus.motion.dev/personal-token](https://plus.motion.dev/personal-token) |
+| [Figma MCP](https://help.figma.com/hc/en-us/articles/32132100833559) | Design-to-code from Figma frames (free during beta) | [figma.com](https://figma.com) |
+| [Marketing Skills](https://github.com/coreyhaines31/marketingskills) | 40+ skills for copywriting, SEO, conversion, growth | No key needed |
+
+**Research (paid):**
 
 | Tool | What It Adds |
 |---|---|
-| [Repomix](https://github.com/yamadashy/repomix) | Packs entire codebases into one AI-optimized file — `bring2life` and research use this |
-| [Context7](https://context7.com) | Live library docs pulled into research — no stale training data |
 | [Exa](https://exa.ai) | Semantic search for similar projects and best practices |
 | [Firecrawl](https://firecrawl.dev) | Deep crawling of repos and docs sites during research |
+
+**Workflow:**
+
+| Tool | What It Adds |
+|---|---|
+| [Repomix](https://github.com/yamadashy/repomix) | Packs entire codebases into one AI-optimized file — `bring2life` uses this |
 | [MemPalace](https://github.com/milla-jovovich/mempalace) | Persistent memory across sessions — decisions survive context clears |
 | [Superpowers](https://github.com/supermemoryai/superpowers-claude) | Enhanced planning and review capabilities for Claude users |
 
-Install what you want. G2W uses what's available and falls back gracefully when something isn't there.
+G2W uses what's available and falls back gracefully when something isn't there.
 
 ---
 
