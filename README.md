@@ -209,7 +209,19 @@ Safe git operations — add, commit, push, status, log — run without approval 
 npm install -g @only1btayy/g2w && g2w
 ```
 
-That's it. G2W installs globally into `~/.claude/` automatically — skills and hooks ready in every project, everywhere.
+That's it. G2W installs globally into `~/.claude/` automatically — skills, hooks, and design tools ready in every project, everywhere.
+
+To update:
+
+```bash
+g2w update
+```
+
+To see optional Power-Ups:
+
+```bash
+g2w power-ups
+```
 
 To uninstall:
 
@@ -217,7 +229,7 @@ To uninstall:
 npm uninstall -g @only1btayy/g2w
 ```
 
-Skills and hooks are removed from `~/.claude/` automatically.
+Skills, hooks, and MCP servers are removed from `~/.claude/` automatically.
 
 > **Tip:** The logo renders in **bright green** in any terminal. On Windows Terminal or iTerm2, enable Retro/Bloom effects for the full glow.
 
