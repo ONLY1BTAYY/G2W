@@ -1,4 +1,22 @@
 ## Last Completed
+G2W Personality system — v1.0.28 (2026-04-08)
+
+**What was done this session (1.0.27 → 1.0.28):**
+- `lib/personality.js` — new module: getName, setName, getGreeting, getCloseQuote, getStreakMessage
+- Post-install greeting: "Hey {name}, let's make an impact and make some money while we're doing it."
+- Session close quotes: 25-quote bank in ready2save skill (both copies). Mix of Ocean Veau originals + curated classics. Some prefixed with "Remember, {name}..." and some standalone.
+- Streak counter: tracks consecutive days in ~/.g2w/streak.json, displays on back2it (calm/professional tone)
+- `g2w setup` CLI command: lets users set preferred first name, stored in ~/.g2w/profile.json
+- Name resolution: profile.json → git config (if real name) → OS username
+
+**Key decisions & WHY:**
+- Quotes live inline in the skill markdown, not in JS — Claude reads skills as prompts, no fragile require() paths
+- Streak tone is calm/professional, NOT hype — Brian specifically said no "king" talk, no cheesy stuff
+- Error messages stay clean — no quotes on errors, people are already frustrated
+- Name prompt is a separate `g2w setup` command, not during install — npm suppresses stdin during postinstall
+- G2W motto ("it's going to work or it's going to work") is in the quote bank as a prefixed quote
+
+## Previous Last Completed
 Bug fixes, auto-install design tools, code audit pipeline, CLI commands (2026-04-08)
 
 **What was done this session (1.0.24 → 1.0.27):**
