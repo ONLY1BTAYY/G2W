@@ -14,7 +14,7 @@ You are closing out this session. Leave the project in a state where any future 
    - Key decisions made and the reasoning behind them
    - Any "don't do this again" lessons learned
 
-   Do NOT ask the user to recall this — you have the full conversation. Only ask if something is genuinely ambiguous.
+   Do NOT ask the user what was done, what to save, or what decisions were made. You witnessed the entire session — extract it yourself and present it. The user confirms or corrects your summary. Never ask them to recall.
 
 2. **Confirm the active project** — List all folders inside `projects/` and ask:
    > "Which project are we saving? (pick one)"
@@ -56,7 +56,7 @@ You are closing out this session. Leave the project in a state where any future 
    - Verified: [how it was verified]
    ```
 
-   Present the commit message to the user. Wait for approval before running.
+   Keep it lean: do NOT run git status, git diff, or git log — you already know what changed. One `git add` for the files you touched + one `git commit` = done. Present the commit message to the user. Wait for approval before running.
 
 6. **Announce with personality:**
    End the session with a closing quote. Pick ONE at random from this list:
