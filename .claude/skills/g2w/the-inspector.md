@@ -60,10 +60,12 @@ There is no partial pass. The build either passes inspection or it goes back to 
 ## Process
 
 1. Read `PLAN.md` — know the contract
-2. Read every file that was modified
-3. Work through the test matrix item by item
-4. Report: PASS (all items verified, user confirmed) or FAIL (specific items failing + fix list)
-5. On PASS → tell The Leader: inspection complete, ready for handoff
+2. Read `ERRORS.md` — know the pre-existing issues
+3. Read every file that was modified
+4. Work through the test matrix item by item
+5. **Update `ERRORS.md`** — mark any issues that were fixed this session as resolved. Add any new issues discovered during verification. Never delete old entries — mark them with `[RESOLVED — date]`.
+6. Report: PASS (all items verified, user confirmed) or FAIL (specific items failing + fix list)
+7. On PASS → tell The Leader: inspection complete, ready for handoff
 
 ## Rules
 

@@ -118,7 +118,7 @@ Each Foundation agent is also a direct slash command. The normal flow runs throu
 | `/g2w:the-challenger` | You wrote your own plan outside G2W and want it stress-tested before building |
 | `/g2w:the-builder` | Plan is already locked — skip straight to building |
 | `/g2w:the-inspector` | Code is already written — just verify it against a plan |
-| `/g2w:the-leader` | Kick off the full pipeline without the identity, brainstorm, and research phases |
+| `/g2w:the-leader` | Kick off the full pipeline — includes automatic code audit before Challenger reviews |
 
 These are escape hatches for engineers who don't need the ceremony. G2W has no ceiling.
 
