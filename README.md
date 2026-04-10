@@ -34,6 +34,7 @@ npm install -g @only1btayy/g2w && g2w
 ---
 
 [The Name](#the-name) · [The Problem](#the-problem) · [How It Works](#how-it-works) · [Resource Limits](#resource-limits) · [The Commands](#the-commands) · [How 2 Install](#how-2-install)
+
 ---
 
 ## The Name
