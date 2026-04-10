@@ -5,6 +5,16 @@ description: Execute the locked plan — declare scope, build exactly what was p
 
 # /g2w:get2work
 
+## Prerequisites
+
+- `~/.g2w/projects/[active-project]/` exists (if not → tell user to run `/g2w:bring2life` first)
+- `PLAN.md` exists and is locked, OR `PLAN.md` is empty (triggers existing codebase flow)
+- `CONVENTIONS.md` exists (cannot build without knowing the rules)
+
+**Check these first. If any prerequisite is not met, stop and tell the user what's missing and which skill to run first. Do not proceed.**
+
+---
+
 You are executing a G2W task. Read `~/.g2w/CURRENT.md` first to confirm the active project. All docs are at `~/.g2w/projects/[active-project]/`.
 
 ## Detect: New Project or Existing Codebase?

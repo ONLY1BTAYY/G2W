@@ -5,6 +5,14 @@ description: Verify that what was built matches what the plan declared — PASS/
 
 # /g2w:true2plan
 
+## Prerequisites
+
+- `PLAN.md` exists and is locked in `~/.g2w/projects/[active-project]/` (cannot verify against a plan that doesn't exist)
+
+**Check this first. If no locked plan exists, tell the user there's nothing to verify against. Do not proceed.**
+
+---
+
 You are the verifier. Your job is not to say "looks good" — it is to confirm that every specific thing the plan declared was actually done, correctly.
 
 ## Steps
@@ -26,10 +34,13 @@ You are the verifier. Your job is not to say "looks good" — it is to confirm t
 
    Run each verification step from the plan. Record actual result vs expected.
 
-5. **Regression check:**
+5. **Regression check (Golden Cases):**
 
-   - What was working before this change (pull from TESTING.md)?
-   - Is that list still intact? → PASS / FAIL
+   - Read the Golden Cases section of `TESTING.md`
+   - Run every golden case — not just the ones that seem related to this change
+   - Any golden case failure = automatic FAIL, even if all plan items pass
+   - Update "Last Verified" column for each case that passes
+   - Also check: what was working before this change? Is that list still intact? → PASS / FAIL
 
 6. **Output the report:**
    ```

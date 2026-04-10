@@ -5,6 +5,14 @@ description: Full G2W system health check — are docs in sync, is the plan lock
 
 # /g2w:true2dagame
 
+## Prerequisites
+
+- `~/.g2w/projects/[active-project]/` exists (at least `/g2w:bring2life` has been run)
+
+**Check this first. If the project docs don't exist, tell the user to run `/g2w:bring2life` first. Do not proceed.**
+
+---
+
 You are auditing the project's G2W health. No rubber-stamping. Find what's broken before it breaks you.
 
 ## Checks
@@ -58,44 +66,99 @@ Flag any doc that looks stale or inconsistent with what you can observe.
 
 ---
 
+## Scoring Rubric
+
+After running each check, score it 1-5. Use the criteria below — no vibes, no rounding up.
+
+### Docs (1-5)
+- **5** — All docs match code, updated this session or last
+- **4** — All docs match code, updated within last 3 sessions
+- **3** — 1 doc stale or missing a section
+- **2** — 2+ docs stale or contradicting the code
+- **1** — Docs are fiction — major drift from reality
+
+### Plan (1-5)
+- **5** — Locked plan exists, all files accurate, clear definition of done
+- **4** — Locked plan exists, minor file renames since lock
+- **3** — Plan exists but is a draft (not locked)
+- **2** — Plan exists but has TBD/TODO markers
+- **1** — No plan, or plan references files/functions that don't exist
+
+### Errors (1-5)
+- **5** — No unresolved critical/high bugs, golden cases all passing
+- **4** — Unresolved bugs exist but all are medium/low
+- **3** — 1 high-severity bug unresolved
+- **2** — 1 critical bug unresolved
+- **1** — Multiple critical bugs unresolved or ERRORS.md doesn't exist
+
+### Freshness (1-5)
+- **5** — CURRENT.md updated this session, all sections accurate
+- **4** — Updated last session, still accurate
+- **3** — "In Progress" is stale but "Next" is correct
+- **2** — Both "In Progress" and "Next" are wrong
+- **1** — CURRENT.md is from a different phase of the project entirely
+
+### Git (1-5)
+- **5** — Clean tree, last commit follows G2W format
+- **4** — Clean tree, last commit message is informal
+- **3** — Uncommitted changes exist but they're small
+- **2** — Large uncommitted changes or untracked files
+- **1** — Uncommitted verified work sitting for 2+ sessions
+
+---
+
+## Action Map
+
+| Score | Action |
+|-------|--------|
+| 1 in any dimension | **HARD STOP** — fix this before any other work |
+| 2 in Docs | Run through each stale doc, update from code |
+| 2 in Plan | Send plan back to Visionary for completion |
+| 2 in Errors | Triage with user — which critical bugs to fix first |
+| 2 in Freshness | Rewrite CURRENT.md from scratch based on actual state |
+| 2 in Git | Commit or stash — decide now |
+| 3 in any dimension | **WARNING** — surface to user, ask if they want to address now |
+| 4-5 in all dimensions | "System is healthy. Ready to build." |
+
+---
+
 ## Output Format
 
 ```
 G2W Health Check — [date]
 
-Docs:
-✅ ARCHITECTURE.md — in sync
-✅ FEATURES.md — in sync
-⚠️  ERRORS.md — ERR-01 marked critical, no activity in 3 sessions
-❌ CONVENTIONS.md — missing (not created yet)
+Docs:       ████████████████░░░░ 4/5
+Plan:       ████████████████████ 5/5
+Errors:     ████████████░░░░░░░░ 3/5
+Freshness:  ████████████████████ 5/5
+Git:        ████████████████░░░░ 4/5
 
-Plan:
-✅ Plan locked
-✅ Definition of done present
-⚠️  2 declared files may have been renamed since lock
-
-Errors:
-⚠️  ERR-01 — CRITICAL, unresolved
-✅ No stale "in progress" errors
-
-CURRENT.md:
-✅ Looks fresh
-
-Git:
-✅ No uncommitted verified changes
-✅ Last commit follows G2W format
-
-Overall: ⚠️  WARNINGS FOUND — review before building
+Overall: 4.2/5
 ```
+
+Then below the scores, show the detail for anything scoring 3 or below:
+
+```
+⚠️  Errors: 3/5 — ERR-01 marked HIGH, unresolved, no activity in 3 sessions
+   → Action: Triage with user — fix or downgrade severity
+
+⚠️  Docs: ... (if applicable)
+```
+
+If overall is 4.0+ with no dimension below 3: "System is healthy. Ready to build."
+
+---
 
 ## After the Report
 
-- If ❌ FAIL items exist → fix them before any other work proceeds
-- If ⚠️ WARNING items exist → surface them to the user, ask if they want to address now or log for later
-- If all ✅ → "System is healthy. Ready to build."
+- If any dimension scores **1** → hard stop, fix before any other work
+- If any dimension scores **2** → fix now, use the action map
+- If any dimension scores **3** → surface to user, ask if they want to address now or later
+- If all dimensions score **4-5** → "System is healthy. Ready to build."
 
 ## Rules
 
 - Don't just check if files exist — read enough to assess if they're accurate
 - A doc that exists but is 6 months stale is worse than no doc (false confidence)
-- If you can't check something (no access, build required), say so — don't guess ✅
+- If you can't check something (no access, build required), say so — don't guess a 5
+- Score honestly. A 4 that should be a 2 is worse than the bug it hides.

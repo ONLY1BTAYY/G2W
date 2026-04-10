@@ -16,6 +16,12 @@ You are closing out this session. Leave the project in a state where any future 
 
    Do NOT ask the user what was done, what to save, or what decisions were made. You witnessed the entire session — extract it yourself and present it. The user confirms or corrects your summary. Never ask them to recall.
 
+1b. **Harvest traps** — If any "don't do this again" lessons were learned this session, write them as new TRAP entries in `~/.g2w/projects/[active-project]/TRAPS.md`. Use the next available TRAP number. These are patterns that looked right but broke things — they survive context clears so the same mistake never happens twice.
+
+1c. **Update golden cases** — If any golden cases in `TESTING.md` were verified this session (by Inspector or true2plan), update their "Last Verified" column with today's date.
+
+1d. **Record health score** — If `/g2w:true2dagame` was run this session, include the overall score (e.g., "Health: 4.2/5") in the session notes so `back2it` can reference it next session.
+
 2. **Identify the active project** — Read `~/.g2w/CURRENT.md` (Windows: `C:/Users/[username]/.g2w/CURRENT.md`). If it has an `active:` line, that's the project. Use it. Do NOT ask.
    - Only if the file doesn't exist or has no `active:` line: list folders in `~/.g2w/projects/` and ask which one. This is the ONLY scenario where you ask.
 

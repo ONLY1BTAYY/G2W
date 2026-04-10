@@ -26,6 +26,8 @@ You are resuming a G2W session. Get back up to speed fast. No fluff.
 
 4. **Doc integrity check:** Does the doc you read still match the current state? If something looks stale, flag it before touching anything else.
 
+4b. **Health score check:** If the last session notes in CURRENT.md include a health score (e.g., "Health: 3.2/5") and it's below 3.5, suggest running `/g2w:true2dagame` before starting work.
+
 5. **Output a 4-line summary** (no more):
    ```
    Project: [active-project]

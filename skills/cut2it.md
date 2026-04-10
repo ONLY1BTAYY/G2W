@@ -5,6 +5,15 @@ description: Fast mode — for clearly scoped, low-risk changes. Skip planning c
 
 # /g2w:cut2it
 
+## Prerequisites
+
+- `~/.g2w/projects/[active-project]/` exists (if not → tell user to run `/g2w:bring2life` first)
+- No locked plan currently active (if a locked plan exists, use `/g2w:get2work` instead — cut2it skips planning)
+
+**Check these first. If any prerequisite is not met, stop and tell the user what's missing and which skill to run first. Do not proceed.**
+
+---
+
 No ceremony. You know what you're doing, it's small, and it's low-risk. Get it done.
 
 ## When to Use This
