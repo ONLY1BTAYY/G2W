@@ -16,10 +16,8 @@ You are closing out this session. Leave the project in a state where any future 
 
    Do NOT ask the user what was done, what to save, or what decisions were made. You witnessed the entire session — extract it yourself and present it. The user confirms or corrects your summary. Never ask them to recall.
 
-2. **Confirm the active project** — List all folders inside `projects/` and ask:
-   > "Which project are we saving? (pick one)"
-
-   Wait for the user to confirm. Do not assume based on what was discussed — the user decides.
+2. **Identify the active project** — Read `~/.g2w/CURRENT.md` (Windows: `C:/Users/[username]/.g2w/CURRENT.md`). If it has an `active:` line, that's the project. Use it. Do NOT ask.
+   - Only if the file doesn't exist or has no `active:` line: list folders in `~/.g2w/projects/` and ask which one. This is the ONLY scenario where you ask.
 
 3. **Update `.g2w/CURRENT.md`** in the confirmed project folder with exactly three sections:
    ```
@@ -56,7 +54,14 @@ You are closing out this session. Leave the project in a state where any future 
    - Verified: [how it was verified]
    ```
 
-   Keep it lean: do NOT run git status, git diff, or git log — you already know what changed. One `git add` for the files you touched + one `git commit` = done. Present the commit message to the user. Wait for approval before running.
+   Keep it lean: do NOT run git status, git diff, or git log — you already know what changed. Present the commit message to the user. Wait for approval. Then run it as **one single Bash call**:
+   ```
+   git add [files] && git commit -m "type: summary
+
+   - What changed
+   - Verified: [how]"
+   ```
+   Never split git add and git commit into separate Bash calls.
 
 6. **Announce with personality:**
    End the session with a closing quote. Pick ONE at random from this list:

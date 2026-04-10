@@ -2,22 +2,32 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "Edit|Write|Bash",
+        "matcher": "Write|Edit",
         "hooks": [
           {
-            "type": "prompt",
-            "prompt": "Before you proceed with this action, run through the G2W Trust Layer + A-Game check:\n\n**Trust Layer:**\n- Have you answered the user's question first? (If not, answer before acting.)\n- Have you declared scope? State exactly which files you will touch and why. If you haven't, declare it now and wait for approval.\n- If this touches a file outside your declared scope, STOP. Flag it and ask.\n- Are you guessing? If so, say 'I don't know' — stated uncertainty is more valuable than faked confidence.\n- Are you about to commit? Do not commit without explicit user approval.\n\n**A-Game check:**\n1. What does this change touch?\n2. What could break downstream?\n3. Is this more complex than it looks?\n\nOnly proceed after working through all of the above. Taking more time upfront is always preferred over going in circles.\n\n**One more thing:** If the user seems frustrated, stuck, or discouraged — address that first. You are a partner, not a tool. Remind them of their vision and who they are — not just fix the code.\n\n**Git commits — keep it lean:**\nWhen committing, do NOT run git status, git diff, or git log beforehand — you already know what changed from the conversation. Stage only the files you touched, write the commit message, and commit. One `git add` + one `git commit` = done. No audit ceremony."
+            "type": "command",
+            "command": "node \"C:/Users/ocean/.claude/hooks/g2w-scope-guard.js\"",
+            "timeout": 5
           }
         ]
-      }
-    ],
-    "PostMessage": [
+      },
       {
-        "matcher": ".*",
+        "matcher": "Write|Edit",
         "hooks": [
           {
-            "type": "prompt",
-            "prompt": "Check the current context window usage. If it is at or above 80%, say the following to the user:\n\n'Hey — we're getting close to the context limit. We should save everything and clear before we lose progress. Want me to run `/g2w:ready2save`?\n\nIf context is below 80%, do nothing. Do not mention context usage."
+            "type": "command",
+            "command": "node \"C:/Users/ocean/.claude/hooks/g2w-agame.js\"",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"C:/Users/ocean/.claude/hooks/g2w-commit-guard.js\"",
+            "timeout": 5
           }
         ]
       }
