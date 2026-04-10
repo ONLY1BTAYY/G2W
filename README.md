@@ -31,8 +31,7 @@ npm install -g @only1btayy/g2w && g2w
 
 ---
 
-[The Name](#the-name) · [The Problem](#the-problem) · [How It Works](#how-it-works) · [Resource Limits](#resource-limits) · [The Commands](#the-commands) · [How 2 Install](#how-2-install) · [Who It's For](#who-its-for)
-
+[The Name](#the-name) · [The Problem](#the-problem) · [How It Works](#how-it-works) · [Resource Limits](#resource-limits) · [The Commands](#the-commands) · [How 2 Install](#how-2-install)
 ---
 
 ## The Name
@@ -287,16 +286,6 @@ npm uninstall -g @only1btayy/g2w
 Skills, hooks, and MCP servers are removed from `~/.claude/` automatically.
 
 > **Tip:** The logo renders in **bright green** in any terminal. On Windows Terminal or iTerm2, enable Retro/Bloom effects for the full glow.
-
----
-
-## Who It's For
-
-Everyone tired of the bullshit. Vibe coders who just want to ship. Senior engineers who want control. Solo builders with no team and no co-founder.
-
-If you've ever felt like your AI was working against you instead of with you, G2W is for you.
-
-G2W works in other models — the Modular Doc System and commands are model-agnostic. But Claude Code is where it's fully alive. The Trust Layer lives in CLAUDE.md so it loads as project instructions every session. The A-Game Hook, resource limits, and scope guard are hook-delivered, running automatically without relying on the AI to remember. Other models get the workflow. Claude Code gets the guarantees.
 
 ---
 
