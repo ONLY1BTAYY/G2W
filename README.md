@@ -14,6 +14,8 @@ This is not just a workflow system. Not just a task runner. This is a protocol f
 
 **G2W is a relationship protocol.**
 
+If you've ever felt like your AI was working against you instead of with you, G2W is for you.
+
 ---
 
 [![npm version](https://img.shields.io/npm/v/%40only1btayy%2Fg2w?style=for-the-badge&logo=npm&logoColor=white&color=CB3837&label=npm)](https://www.npmjs.com/package/@only1btayy/g2w)
