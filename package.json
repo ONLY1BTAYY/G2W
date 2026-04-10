@@ -1,6 +1,9 @@
 {
   "name": "@only1btayy/g2w",
   "version": "1.0.31",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "G2W — a relationship protocol for building trust with AI",
   "bin": {
     "g2w": "bin/g2w.js"
