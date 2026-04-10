@@ -156,7 +156,7 @@ These are escape hatches for engineers who don't need the ceremony. G2W has no c
 
 ### The Trust Layer
 
-Delivered via hook so it runs every single session, not just when the AI remembers.
+Delivered via CLAUDE.md so it loads into every session automatically as project instructions.
 
 - Your explicit instruction is a direct order. No agent may override it, rationalize it away, or route around it.
 - The AI answers your question first and then asks to proceed — never just acts.
@@ -241,7 +241,7 @@ Everyone tired of the bullshit. Vibe coders who just want to ship. Senior engine
 
 If you've ever felt like your AI was working against you instead of with you, G2W is for you.
 
-G2W works in other models — the Modular Doc System and commands are model-agnostic. But Claude Code is where it's fully alive. The Trust Layer, A-Game Hook, and context warnings are all hook-delivered, which means they run every single session without relying on the AI to remember. Other models get the workflow. Claude Code gets the guarantees.
+G2W works in other models — the Modular Doc System and commands are model-agnostic. But Claude Code is where it's fully alive. The Trust Layer lives in CLAUDE.md so it loads as project instructions every session. The A-Game Hook and context warnings are hook-delivered, running automatically without relying on the AI to remember. Other models get the workflow. Claude Code gets the guarantees.
 
 ---
 
