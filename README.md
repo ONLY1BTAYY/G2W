@@ -45,11 +45,28 @@ No in-between. No failure as an option. Two paths and both lead to success.
 
 ## The Problem
 
-You've worked with AI before. You know how it goes.
+I want to preface this by saying I'm a vibe-coder. I have the utmost respect for actual devs and feel genuinely grateful to live in a time where tools like Claude and Codex let people like me get ideas out without needing to know how to code or have a big budget. I felt like I finally found my thing.
 
-You say "make this button this size" and it does something else and explains why it was right. You spend an hour in a discussion session and then have to repeat everything again when it's time to plan. It makes a change that breaks three other things it never bothered to check. It commits code you didn't approve. It guesses instead of asking.
+As many of you may have noticed, Claude seemed to take a noticeable dip in performance quality around February 2026. Some people swear it's just a matter of not knowing how to use it properly, and hey, great for you, but if you experienced the dip, you know exactly what I'm talking about.
 
-G2W fixes all of that. Not by adding more rules but by building a system that genuinely earns trust.
+He simply became unable to handle even simple tasks or edits. He'd go completely off the rails, then turn around and say "yeah you're right" over and over which drove me near insanity. I followed every recommended protocol, watched and read tutorial after tutorial, and even used the exact claude.md template that Boris Cherny shared on his X account. So you can miss me with the "oh you're just not using it right" talk. Claude worked great until he didn't. A lot of you can relate.
+
+I'd say "make this button this size" and get back "I've already decided the current size is optimal." WTF.
+
+Sound familiar?
+
+- Spending an hour in a planning session, then having to repeat everything when it's time to execute
+- Watching it make changes that break three other things it never bothered to check, then admit it after the fact
+- Seeing it commit code you never approved
+- Having it guess instead of just asking
+
+I did try other systems along the way, like GSD 1 & 2 (Get Shit Done) by TACHES. It's great if you want AI to build everything out while you step away, but I wanted more control and involvement. I wanted to learn as I went, steer the ship, and understand how what I was building actually worked. GSD felt clunky and slow to me at times. No shade to what TACHES built though, it's wildly popular for a reason and he deserves every bit of the success he's seeing. It just wasn't the fit for me.
+
+Deep down I knew there had to be something I could do to get Claude back on track. Even 80% of what he was when I started, I could live with that. Just not the full-blown-idiot-Claude days.
+
+After collecting data from Reddit and Facebook posts, the lightbulb went off. That was the birth of G2W.
+
+G2W was created for those of us who just want the AI to do what we ask. Simple. Nothing more, nothing less. Not by piling on more rules but by building a system that genuinely earns trust.
 
 The problem was never intelligence. The problem was process.
 
