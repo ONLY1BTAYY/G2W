@@ -8,9 +8,9 @@
 
 The best relationships are built on trust. Trust comes from honesty, and honesty breeds clarity and understanding.
 
-I got tired of going in circles with Claude and others because the systems I was using were not set up in a way that builds trust between the user and the model. Some of the top CEOs and big business people who use AI are not concerned with the question — "can it build?" Instead they are focused on — "can we trust what it builds and can we ship it?"
+I got tired of going in circles with Claude because the systems I was using weren't set up to build genuine trust between the user and the model. The top CEOs and business leaders using AI aren't asking "can it build?" They're asking "can we trust what it builds, and can we ship it?"
 
-This is not just a workflow system. Not just a task runner. This is a protocol for building trust between you and your AI so what gets built is actually what you envisioned. No more back and forth and all the other bullshit that gets in the way.
+This is not just a workflow system. Not just a task runner. This is a protocol for building trust between you and your AI so what gets built is actually what you envisioned. No more back and forth, no more bullshit getting in the way.
 
 **G2W is a relationship protocol.**
 
