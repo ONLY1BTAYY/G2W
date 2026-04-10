@@ -4,8 +4,6 @@
 
 </div>
 
-# G2W
-
 [![npm version](https://img.shields.io/npm/v/%40only1btayy%2Fg2w?style=for-the-badge&logo=npm&logoColor=white&color=CB3837&label=npm)](https://www.npmjs.com/package/@only1btayy/g2w)
 [![license](https://img.shields.io/badge/license-MIT-6e7681?style=for-the-badge)](LICENSE)
 [![platform](https://img.shields.io/badge/platform-Claude%20Code-8957e5?style=for-the-badge)](https://claude.ai/code)
@@ -24,6 +22,8 @@ npm install -g @only1btayy/g2w && g2w
 [The Name](#the-name) · [The Problem](#the-problem) · [How It Works](#how-it-works) · [Resource Limits](#resource-limits) · [The Commands](#the-commands) · [How 2 Install](#how-2-install)
 
 ---
+
+# G2W
 
 The best relationships are built on trust. Trust comes from honesty, and honesty breeds clarity and understanding.
 
