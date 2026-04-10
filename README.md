@@ -6,18 +6,6 @@
 
 # G2W
 
-The best relationships are built on trust. Trust comes from honesty, and honesty breeds clarity and understanding.
-
-I got tired of going in circles with Claude because the systems I was using weren't set up to build genuine trust between the user and the model. The top CEOs and business leaders using AI aren't asking "can it build?" They're asking "can we trust what it builds, and can we ship it?"
-
-This is not just a workflow system. Not just a task runner. This is a protocol for building trust between you and your AI so what gets built is actually what you envisioned. No more back and forth, no more bullshit getting in the way.
-
-**G2W is a relationship protocol.**
-
-If you've ever felt like your AI was working against you instead of with you, G2W is for you.
-
----
-
 [![npm version](https://img.shields.io/npm/v/%40only1btayy%2Fg2w?style=for-the-badge&logo=npm&logoColor=white&color=CB3837&label=npm)](https://www.npmjs.com/package/@only1btayy/g2w)
 [![license](https://img.shields.io/badge/license-MIT-6e7681?style=for-the-badge)](LICENSE)
 [![platform](https://img.shields.io/badge/platform-Claude%20Code-8957e5?style=for-the-badge)](https://claude.ai/code)
@@ -34,6 +22,18 @@ npm install -g @only1btayy/g2w && g2w
 ---
 
 [The Name](#the-name) · [The Problem](#the-problem) · [How It Works](#how-it-works) · [Resource Limits](#resource-limits) · [The Commands](#the-commands) · [How 2 Install](#how-2-install)
+
+---
+
+The best relationships are built on trust. Trust comes from honesty, and honesty breeds clarity and understanding.
+
+I got tired of going in circles with Claude because the systems I was using weren't set up to build genuine trust between the user and the model. The top CEOs and business leaders using AI aren't asking "can it build?" They're asking "can we trust what it builds, and can we ship it?"
+
+This is not just a workflow system. Not just a task runner. This is a protocol for building trust between you and your AI so what gets built is actually what you envisioned. No more back and forth, no more bullshit getting in the way.
+
+**G2W is a relationship protocol.**
+
+If you've ever felt like your AI was working against you instead of with you, G2W is for you.
 
 ---
 
