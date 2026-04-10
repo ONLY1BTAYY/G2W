@@ -205,12 +205,6 @@ The resource limits hook runs first in the chain — before scope guard, before 
 
 ---
 
-### Git Without The Friction
-
-Safe git operations — add, commit, push, status, log — run without approval prompts. One command handles the whole thing. Add, commit, push. Done. No multi-step back and forth, no unnecessary interruptions. You stay in flow.
-
----
-
 ## The Commands
 
 | Command | What It Does |
@@ -265,7 +259,7 @@ Everyone tired of the bullshit. Vibe coders who just want to ship. Senior engine
 
 If you've ever felt like your AI was working against you instead of with you, G2W is for you.
 
-G2W works in other models — the Modular Doc System and commands are model-agnostic. But Claude Code is where it's fully alive. The Trust Layer lives in CLAUDE.md so it loads as project instructions every session. The A-Game Hook and context warnings are hook-delivered, running automatically without relying on the AI to remember. Other models get the workflow. Claude Code gets the guarantees.
+G2W works in other models — the Modular Doc System and commands are model-agnostic. But Claude Code is where it's fully alive. The Trust Layer lives in CLAUDE.md so it loads as project instructions every session. The A-Game Hook, resource limits, and scope guard are hook-delivered, running automatically without relying on the AI to remember. Other models get the workflow. Claude Code gets the guarantees.
 
 ---
 
