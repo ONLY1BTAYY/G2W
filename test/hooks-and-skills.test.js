@@ -91,8 +91,9 @@ test('No prompt-type hooks in G2W_HOOKS', () => {
   assert(!hooksBlock.includes("type: 'prompt'"), 'G2W_HOOKS should have no prompt hooks');
 });
 
-test('PreToolUse has scope-guard, a-game, and commit-guard', () => {
+test('PreToolUse has resource-limits, scope-guard, a-game, and commit-guard', () => {
   const hooksBlock = installSrc.split('const G2W_HOOKS')[1].split('function copySkills')[0];
+  assert(hooksBlock.includes('g2w-resource-limits'), 'Should have resource limits');
   assert(hooksBlock.includes('g2w-scope-guard'), 'Should have scope guard');
   assert(hooksBlock.includes('g2w-agame'), 'Should have a-game');
   assert(hooksBlock.includes('g2w-commit-guard'), 'Should have commit guard');
@@ -107,6 +108,7 @@ test('Commit guard matches on Bash, not Write|Edit', () => {
 
 test('Merge logic checks each hook individually by signature', () => {
   assert(installSrc.includes('HOOK_SIGNATURES'), 'Should use HOOK_SIGNATURES for dedup');
+  assert(installSrc.includes('resourceLimits'), 'Should check resource-limits individually');
   assert(installSrc.includes('scopeGuard'), 'Should check scope-guard individually');
   assert(installSrc.includes('aGame'), 'Should check a-game individually');
   assert(installSrc.includes('commitGuard'), 'Should check commit-guard individually');
@@ -126,6 +128,11 @@ test('Merge cleans up old PostMessage hooks', () => {
 test('Merge cleans up old Trust Layer prompt from PreToolUse', () => {
   const mergeSection = installSrc.split('function mergeHooks')[1];
   assert(mergeSection.includes("Trust Layer"), 'Should remove old Trust Layer prompt from PreToolUse');
+});
+
+test('Uninstall removes resource-limits hook file', () => {
+  const removeSection = installSrc.split('function removeHooks')[1];
+  assert(removeSection.includes('g2w-resource-limits.js'), 'Should clean up resource-limits file');
 });
 
 test('Uninstall removes commit-guard hook file', () => {
@@ -154,6 +161,67 @@ test('g2w-agame.js exists in hooks/', () => {
 test('g2w-commit-guard.js exists in hooks/', () => {
   const p = path.join(__dirname, '..', 'hooks', 'g2w-commit-guard.js');
   assert(fs.existsSync(p), 'hooks/g2w-commit-guard.js should exist');
+});
+
+test('g2w-resource-limits.js exists in hooks/', () => {
+  const p = path.join(__dirname, '..', 'hooks', 'g2w-resource-limits.js');
+  assert(fs.existsSync(p), 'hooks/g2w-resource-limits.js should exist');
+});
+
+test('resource-limits tracks Write, Edit, and Bash', () => {
+  const src = fs.readFileSync(path.join(__dirname, '..', 'hooks', 'g2w-resource-limits.js'), 'utf8');
+  assert(src.includes("toolName !== 'Write'"), 'Should check for Write');
+  assert(src.includes("toolName !== 'Edit'"), 'Should check for Edit');
+  assert(src.includes("toolName !== 'Bash'"), 'Should check for Bash');
+});
+
+test('resource-limits has hard blocks and warnings', () => {
+  const src = fs.readFileSync(path.join(__dirname, '..', 'hooks', 'g2w-resource-limits.js'), 'utf8');
+  assert(src.includes('exit(1)'), 'Should hard block with exit code 1');
+  assert(src.includes('RESOURCE LIMIT'), 'Should have resource limit message');
+  assert(src.includes('LOOP DETECTED'), 'Should have loop detection message');
+  assert(src.includes('SCOPE CREEP'), 'Should have scope creep message');
+  assert(src.includes('RESOURCE WARNING'), 'Should have warning message');
+});
+
+test('resource-limits has configurable defaults', () => {
+  const src = fs.readFileSync(path.join(__dirname, '..', 'hooks', 'g2w-resource-limits.js'), 'utf8');
+  assert(src.includes('resource-limits.json'), 'Should read config from resource-limits.json');
+  assert(src.includes('DEFAULTS'), 'Should have hardcoded defaults');
+  assert(src.includes('maxToolCalls'), 'Should have maxToolCalls config');
+  assert(src.includes('maxPlanRevisions'), 'Should have maxPlanRevisions config');
+});
+
+test('resource-limits logs sessions to session-log.jsonl', () => {
+  const src = fs.readFileSync(path.join(__dirname, '..', 'hooks', 'g2w-resource-limits.js'), 'utf8');
+  assert(src.includes('session-log.jsonl'), 'Should log to session-log.jsonl');
+  assert(src.includes('appendLog'), 'Should have append log function');
+});
+
+test('resource-limits never blocks on error', () => {
+  const src = fs.readFileSync(path.join(__dirname, '..', 'hooks', 'g2w-resource-limits.js'), 'utf8');
+  assert(src.includes('catch {'), 'Should catch errors');
+  // The final catch block should exit 0
+  const lastCatch = src.lastIndexOf('catch {');
+  const afterLastCatch = src.substring(lastCatch);
+  assert(afterLastCatch.includes('exit(0)'), 'Final catch should exit 0 (never block on error)');
+});
+
+test('resource-limits runs first (before scope-guard) in G2W_HOOKS', () => {
+  const hooksBlock = installSrc.split('const G2W_HOOKS')[1].split('function copySkills')[0];
+  const limitsPos = hooksBlock.indexOf('g2w-resource-limits');
+  const scopePos = hooksBlock.indexOf('g2w-scope-guard');
+  assert(limitsPos < scopePos, 'Resource limits should come before scope guard in hook order');
+});
+
+test('resource-limits matches on Write|Edit|Bash', () => {
+  const hooksBlock = installSrc.split('const G2W_HOOKS')[1].split('function copySkills')[0];
+  assert(hooksBlock.includes("matcher: 'Write|Edit|Bash'"), 'Resource limits should match Write|Edit|Bash');
+});
+
+test('install creates default resource-limits.json', () => {
+  assert(installSrc.includes('createDefaultResourceLimits'), 'Should call createDefaultResourceLimits on install');
+  assert(installSrc.includes('resource-limits.json'), 'Should reference resource-limits.json config');
 });
 
 test('commit-guard detects git commit', () => {

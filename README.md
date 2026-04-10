@@ -31,7 +31,7 @@ npm install -g @only1btayy/g2w && g2w
 
 ---
 
-[The Name](#the-name) · [The Problem](#the-problem) · [How It Works](#how-it-works) · [The Commands](#the-commands) · [How 2 Install](#how-2-install) · [Who It's For](#who-its-for) · [Philosophy](#the-philosophy)
+[The Name](#the-name) · [The Problem](#the-problem) · [How It Works](#how-it-works) · [Resource Limits](#resource-limits) · [The Commands](#the-commands) · [How 2 Install](#how-2-install) · [Who It's For](#who-its-for) · [Philosophy](#the-philosophy)
 
 ---
 
@@ -181,6 +181,30 @@ Only after working through those questions does execution begin. Taking more tim
 
 ---
 
+### Resource Limits
+
+AI agents don't slow down on their own. They keep running, keep calling models, and keep charging your account until you step in and control it. G2W has a built-in safety layer that tracks usage per session and stops runaway behavior before it burns through your budget.
+
+**What it tracks:**
+
+| Metric | Default Limit | What Happens |
+|---|---|---|
+| Total tool calls per session | 200 | Hard stop — wrap up and hand off |
+| PLAN.md revisions | 5 | Hard stop — Visionary/Challenger loop is stuck, escalate to user |
+| Unique files touched | 25 | Hard stop — scope creep detected |
+| Edits to the same file | 8 | Warning — possible fix loop |
+| Tool call usage at 80% | — | Warning — start wrapping up |
+
+**Session logging:** Every completed session gets logged to `~/.g2w/session-log.jsonl` — project name, tool call breakdown, duration. You can see exactly which tasks are driving spend.
+
+**Configurable:** All limits live in `~/.g2w/resource-limits.json`. Edit any number. Per-project overrides go in `~/.g2w/projects/[project]/resource-limits.json`.
+
+**Kill switch:** Set `"enabled": false` in the config to bypass all limits. Delete `~/.g2w/session-limits.json` to reset counters mid-session.
+
+The resource limits hook runs first in the chain — before scope guard, before A-Game, before anything else. If the session is over limit, nothing else fires.
+
+---
+
 ### Git Without The Friction
 
 Safe git operations — add, commit, push, status, log — run without approval prompts. One command handles the whole thing. Add, commit, push. Done. No multi-step back and forth, no unnecessary interruptions. You stay in flow.
@@ -248,12 +272,6 @@ G2W works in other models — the Modular Doc System and commands are model-agno
 ## The Philosophy
 
 Speed comes from simplicity. Control comes from clarity. If you need a system to manage your system, it's already broken. G2W is not a factory. It's a studio.
-
----
-
-## Status
-
-Under active development. First real-world test case is Blackhole VST running through `/g2w:bring2life`.
 
 ---
 
