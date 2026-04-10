@@ -9,12 +9,14 @@ You are closing out this session. Leave the project in a state where any future 
 
 ## Steps
 
-1. **Capture decisions** — Review the conversation history and extract:
+1. **Capture decisions** — You MUST extract everything yourself from the conversation history. NEVER ask the user what was done, what decisions were made, or what to save. You were here the whole time. Asking the user to recall is a failure.
+
+   Extract from the conversation (do not ask):
    - What was built or changed
    - Key decisions made and the reasoning behind them
    - Any "don't do this again" lessons learned
 
-   Do NOT ask the user what was done, what to save, or what decisions were made. You witnessed the entire session — extract it yourself and present it. The user confirms or corrects your summary. Never ask them to recall.
+   Present your summary. The user confirms or corrects it.
 
 1b. **Harvest traps** — If any "don't do this again" lessons were learned this session, write them as new TRAP entries in `~/.g2w/projects/[active-project]/TRAPS.md`. Use the next available TRAP number. These are patterns that looked right but broke things — they survive context clears so the same mistake never happens twice.
 
@@ -110,5 +112,5 @@ You are closing out this session. Leave the project in a state where any future 
 
 - Never commit unverified work — if something wasn't tested, say so and don't include it
 - The handoff note must capture WHY decisions were made, not just what was done
-- Extract decisions from the conversation — never make the user recall work you already witnessed
+- NEVER ask the user what happened, what to save, or what decisions were made — you witnessed it all, extract it yourself. Asking is a failure.
 - Do not clear context or close anything — that's the user's call
