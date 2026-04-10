@@ -288,8 +288,8 @@ Skills, hooks, and MCP servers are removed from `~/.claude/` automatically.
 G2W is open source and contributions are welcome.
 
 **How to get started:**
-1. Fork the repo
-2. Clone it and run `npm install`
+1. Fork the repo and clone it
+2. Install from your clone: `npm install -g .`
 3. Make your changes in a feature branch
 4. Run `node test/hooks-and-skills.test.js` to make sure nothing breaks
 5. Open a PR with a clear description of what you changed and why
